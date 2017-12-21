@@ -1,0 +1,61 @@
+
+// projects
+.project {
+  @include drawProject (80%, auto);
+
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+.projectsContainer {
+  margin: 0 auto;
+  width: 90%;
+}
+
+.imgProject {
+  @include drawImage (auto);
+}
+
+.nameStudent {
+  @include createBeforeLine(20px, $skyblue, 2px);
+
+  color: $skyblue;
+  font-weight: 300;
+}
+ 
+@include respond-to('small') {
+  .imgProject {
+    @include drawImage (auto);
+  }
+}
+@include respond-to('medium') {
+  .imgProject {
+    @include drawImage (auto);
+  }
+  .project {
+    @include drawProject (40%, auto);
+
+    padding: 20px 3%;
+    display:inline-block;
+  }
+}
+@include respond-to('large') {
+    
+.imgProject {
+    @include drawImage (auto);
+  }
+
+/*
+.textHover {
+  @include drawHoverText(auto);
+}*/
+
+}
+@include respond-to('huge') {
+  .textHover {
+    @include drawHoverText(38%);
+  }
+}
+
+  
+

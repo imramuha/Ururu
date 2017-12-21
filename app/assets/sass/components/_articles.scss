@@ -1,0 +1,49 @@
+.wrapper { 
+    border : 2px solid #000; 
+    overflow:hidden;
+}
+
+.wrapper2 { 
+  border : 2px solid #000; 
+  overflow:hidden;
+}
+
+.wrapper2 div {
+  min-height: 200px;
+  padding: 10px;
+  display: inine-block;
+}
+.imgLeft {
+  float: left; 
+  margin: 1% 0 1% 1%;
+  width: 30%;
+  height: auto;
+  border-right: 2px solid #000;
+  display: inline-block;
+  min-width: 100px;
+}
+
+.textRight { 
+  background-color: white;
+  margin: 1% 0;
+  overflow: hidden;
+  width: 55%;
+  border: 1pt solid black;
+  display: inline-block;
+}
+
+.imgRight {
+  float: right;
+  width:30%;
+  border: 1px solid black;
+}
+
+.textLeft { 
+  background-color: white;
+  overflow: hidden;
+  float: left;
+  margin: 10px;
+  width: 55%;
+  border: 2px dashed #ccc;
+  min-height: 150px;
+}

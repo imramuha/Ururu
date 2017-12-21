@@ -1,0 +1,27 @@
+{{!-- pages/projects.hbs --}}
+
+{{#> layouts/base title="News" pathToRoot="./" }}
+
+{{#* inline "head-block"}}        
+          <div class="containerQuote">
+            <h1>"a good newspage."</h1>
+          </div> 
+{{/inline}}
+
+ {{#*inline "content-block"}}
+ <div class="fb-grid__container">
+ <div class="buttonContainer">
+            <div class="sectionDescription">
+              <h2 class="no-span">overview articles</h2>
+            </div>
+          </div>
+  <div class="articlesContainer"></div>  
+  </div> 
+ {{/inline}}
+
+
+{{#*inline scripts-block}}
+      {{!-- Custom scripts per pag.e --}}
+{{/inline}}
+
+{{/layouts/base}}

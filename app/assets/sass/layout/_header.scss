@@ -1,0 +1,135 @@
+// --------------------------------------------------------------------------------------------   NAVIGATION~
+.footer ul,
+.navigation ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: $snowwhite;
+}
+
+.containerNav li {
+  float: left;
+}
+
+.containerNav li a,
+.containerFoot li a {
+  display: block;
+  color: $nightblue;
+  text-align: center;
+  padding: 12px 10px;
+  text-decoration: none;
+}
+
+.containerNav {
+  @include makeOuterContainer($snowwhite, $nightblue, 50%, 50%);
+}
+
+.navigation {
+  font-family: $headings-font-family;
+  font-size: #{$base-font-size}pt;
+  width: auto;
+  padding: 0 8%;
+  background: none;
+  box-shadow: 1px 6px 4px -4px $nightblue;
+  position: relative;
+}
+
+li.listBoxFoot {
+  @include createABorder(3px, left, $snowwhite, 0);
+}
+
+li.listBoxNav {
+  @include createABorder(3px, right, $snowwhite, 0);
+
+  float: right;
+}
+
+// The left and right titles on the navigation bar
+a.right.foot,
+a.right.nav {
+  @include drawALine($snowwhite, $nightblue);
+}
+
+a.left.nav,
+.fa.foot {
+  @include drawALine($nightblue, $snowwhite);
+}
+
+#dull,
+#pull {
+  display: none;
+  padding: 10px 20px;
+}
+
+@include respond-to('mediumx') {
+  nav a#pull {
+    color: $nightblue;
+    text-align: left;
+    display: inline-block;
+  }
+
+  nav a#dull {
+    color: $snowwhite;
+    float: right;
+    text-align: right;
+    display: inline-block;
+  }
+
+  nav ul {
+    display: none;
+    height: auto;
+  }
+
+  #dull {
+    display: block;
+    position: relative;
+  }
+}
+
+// HEADER QUOTE
+// NEXT STEP~~~WHITE SPACE ABOVE AND BELOW NAV/FOOT
+.footerWhiteSpace {
+  height: 250px;
+  box-sizing: border-box;
+  background: $snowwhite;
+
+  /* // example to use my website responsive maker
+  @include respond-to('medium') {
+  background: blue;} */
+}
+
+.containerQuote {
+  @include createABorder(4px, bottom, $nightblue, 130px);
+
+  height: 130px;
+  box-sizing: border-box;
+  background: $snowwhite;
+  display: flex;
+  align-items: center;
+  padding: 5% 20%;
+
+  @include respond-to('small') {
+    @include createABorder(5px, bottom, $nightblue, 200px);
+
+    height: 200px;
+  }
+
+  @include respond-to('medium') {
+    @include createABorder(4px, bottom, $nightblue, 250px);
+
+    height: 250px;
+  }
+
+  @include respond-to('large') {
+    @include createABorder(5px, bottom, $nightblue, 300px);
+
+    height: 300px;
+  }
+
+  @include respond-to('huge') {
+    @include createABorder(5px, bottom, $nightblue, 350px);
+
+    height: 350px;
+  }
+}

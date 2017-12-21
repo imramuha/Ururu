@@ -1,0 +1,144 @@
+.containerFoot {
+  @include makeOuterContainer($nightblue, $snowwhite, 30%, 30%);
+
+  display: flex;
+}
+
+.footer {
+  background: none;
+  box-shadow: 1px 6px 4px -4px $nightblue;
+  position: relative;
+}
+
+.footer.text {
+  padding: 0 1% 0 8%;
+  width: 80%;
+}
+
+.footer.fa {
+  padding: 0 8% 0 1%;
+  width: 50%;
+}
+
+.footer.fa li {
+  float: right;
+}
+
+.fa.foot {
+  padding: 12px 20px;
+}
+
+.listBoxFoot {
+  float: left;
+}
+
+// MEDIA~~~~
+@include respond-to('largex') {
+  .footer.text {
+    padding: 0 0 0 8%;
+    width: 100%;
+  }
+
+  .footer.fa {
+    padding: 0 8% 0 0;
+    width: 70%;
+  }
+
+  a.right.foot {
+    padding: 8px;
+
+    @include drawALine($snowwhite, $nightblue);
+  }
+
+  .fa.foot {
+    padding: 12px 15px;
+  }
+
+}
+
+@include respond-to('mediumx') {
+  .containerFoot {
+    background: none;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    justify-content: center;
+  }
+
+  a.right.foot,
+  .listBoxFoot {
+    @include drawALine($nightblue, $snowwhite);
+
+  }
+
+  .footer.text {
+    order: 2;
+    box-shadow: none;
+    margin: auto;
+    text-align: center;
+    padding: 0 3%;
+  }
+
+  .footer.fa {
+    border-bottom: 3px solid $nightblue;
+    order: 1;
+    margin-bottom: 20px;
+    padding: 0 0 10px;
+    width: auto;
+  }
+
+  .listBoxFoot {
+    width: auto;
+    float: none;
+    display: inline-block;
+  }
+}
+
+// Footer white space
+.footerWhiteSpace {
+  @include createABorder(4px, top, $nightblue, 150px);
+
+  height: 150px;
+
+  @include respond-to('small') {
+    @include createABorder(5px, top, $nightblue, 150px);
+
+    height: 150px;
+  }
+
+  @include respond-to('medium') {
+    @include createABorder(4px, top, $nightblue, 175px);
+
+    height: 175px;
+  }
+
+  @include respond-to('large') {
+    @include createABorder(5px, top, $nightblue, 210px);
+
+    height: 210px;
+  }
+
+  @include respond-to('huge') {
+    @include createABorder(5px, top, $nightblue, 250px);
+
+    height: 250px;
+  }
+}
+
+// FOOTER
+.sitemapContainer {
+  text-decoration: none;
+}
+
+.sitemapContainer ul {
+  width: 70%;
+  margin: auto;
+}
+
+.sitemapContainer li {
+  list-style-type: upper-roman;
+}
+
+.sitemapContainer a {
+  text-decoration: none;
+  @include drawALine($nightblue, $snowwhite);
+}

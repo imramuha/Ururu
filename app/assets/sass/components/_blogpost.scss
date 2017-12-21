@@ -1,0 +1,90 @@
+.blogPostsContainer {
+  float: none;
+  margin: 0 auto;
+}
+
+.blogPost,
+.box {
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  position: relative;
+}
+
+.blogPost {
+  display: inline-block;
+  box-shadow: 0 0 50px  rgba(0,0,0,0.25);
+  height: 590px;
+  margin: 3%;
+  width: 305px;
+}
+
+//background img moet hierin
+.overlay {
+  background-size: cover;
+  height: calc(100% + 40px);
+  margin: -20px;
+  position: relative;
+  width: calc(100% + 40px);
+  -webkit-filter: blur(10px);
+  -moz-filter: blur(10px);
+  filter: blur(5px);
+}  
+
+// where her img and face is
+.above {
+  background: rgba(0, 97, 145, 0.45);
+  color: #FFF;
+  height: 400px;
+  left: 0;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  width: 100%;
+  padding: 10%;
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box;         /* Opera/IE 8+ */
+}
+
+// line outside image
+.above:before {
+  border: 5px solid rgba(161, 220, 255, 0.34);
+  border-radius: 100%;
+  content: "";
+  height: 160px;
+  width: 160px;
+  left: 0;
+  margin: 40px auto;
+  padding: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+// image itself lady
+.above img {
+  border: 5px solid #A1DCFF;
+  border-radius: 50%;
+  height: 38%;
+  width: 125px;
+  margin: 10%;
+  object-fit: cover;
+  object-position: center;
+}
+
+// where our title of the post will be
+.below {
+  background: rgba(0, 97, 145, 0.75);
+  bottom: 0;
+  color: #FFF;
+  left: 0;
+  position: absolute;
+  text-align: center;
+  top: 400px;
+  width: 100%;
+  padding: 10%;
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box;         /* Opera/IE 8+ */
+}
