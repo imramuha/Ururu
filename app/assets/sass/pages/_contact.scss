@@ -1,0 +1,94 @@
+// --CONTACT
+.containerContact {
+  width: 80%;
+  margin: 0 auto;
+}
+
+// container form
+.containerContact h2 {
+  margin: 25px 0px 0px;
+}
+
+.sendButton {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-left: 8px;
+}
+
+// input name email and question
+.formContact input,
+.formContact textarea {
+  width: 100%;
+  border: 2px solid $nightblue;
+  padding: 5px;
+  margin: 0px;
+  color: $nightblue;
+  font-family: $base-font-family;
+}
+
+// input name and email
+.formContact input {
+  min-height: 25px;
+}
+
+// input question
+.formContact textarea {
+  min-height: 250px;
+}
+
+// send button
+.buttonsHome.contact {
+  width: 100%;
+  margin: 20px 3px 0 0px;
+}
+
+@include respond-to('small') {
+  margin: 25px 3px 0 0px;
+}
+
+@include respond-to('medium') {
+  .buttonsHome.contact {
+    margin: 30px 3px 0 0px;
+  }
+}
+
+// MEDIA ---------------------------------------------------------------------------------- --CONTACT
+@include respond-to('large') {
+  .inputName, .inputEmail {
+    display: inline-block;
+    width: 40%;
+  }
+
+  .inputEmail {
+    float: right;
+  }
+
+  .inputEmail h2 {
+    margin-left: -15px;
+  }
+
+  .buttonsHome.contact {
+    margin: 40px 3px 0 0px;
+  }
+
+  .formContact input,
+  .formContact textarea {
+    width: 100%;
+    border: 2px solid $nightblue;
+    padding: 5px;
+    margin: 0px;
+    color: $nightblue;
+    font-family: $base-font-family;
+  }
+  .containerContact {
+    width: 100%;
+  }
+}
+
+@include respond-to('huge') {
+  .buttonsHome.contact {
+    margin: 50px 3px 0 0px;
+  }
+}

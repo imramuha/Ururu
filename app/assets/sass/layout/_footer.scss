@@ -123,22 +123,3 @@
     height: 250px;
   }
 }
-
-// FOOTER
-.sitemapContainer {
-  text-decoration: none;
-}
-
-.sitemapContainer ul {
-  width: 70%;
-  margin: auto;
-}
-
-.sitemapContainer li {
-  list-style-type: upper-roman;
-}
-
-.sitemapContainer a {
-  text-decoration: none;
-  @include drawALine($nightblue, $snowwhite);
-}

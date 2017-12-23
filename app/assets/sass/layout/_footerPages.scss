@@ -1,0 +1,39 @@
+// --PRIVACY --CONDITIONS
+.privacyContainer,
+.conditionsContainer {
+  width: 90%;
+  margin: 0 auto;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.privacyContainer ul,
+.conditionsContainer ul {
+  list-style-type: upper-roman;
+  padding-left: 10px;
+}
+
+.privacyContainer a,
+.conditionsContainer a {
+    color: $nightblue;
+    text-decoration: none;
+}
+
+// --SITEMAP
+.sitemapContainer {
+  text-decoration: none;
+}
+
+.sitemapContainer ul {
+  width: 70%;
+  margin: auto;
+}
+
+.sitemapContainer li {
+  list-style-type: upper-roman;
+}
+
+.sitemapContainer a {
+  text-decoration: none;
+  @include drawALine($nightblue, $snowwhite);
+}

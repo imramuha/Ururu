@@ -56,36 +56,62 @@ a.left.nav,
   @include drawALine($nightblue, $snowwhite);
 }
 
-#dull,
-#pull {
+#pullLogin,
+#pullNav {
   display: none;
   padding: 10px 20px;
 }
 
 @include respond-to('mediumx') {
-  nav a#pull {
-    color: $nightblue;
-    text-align: left;
-    display: inline-block;
+  .navigation {
+    padding: 0px;
   }
 
-  nav a#dull {
-    color: $snowwhite;
-    float: right;
-    text-align: right;
+  nav a#pullNav {
+    text-align: left;
     display: inline-block;
+  
+    @include drawALine($snowwhite, $nightblue);
   }
 
   nav ul {
-    display: none;
+    //display: none;
     height: auto;
   }
 
-  #dull {
+  li.listBoxNav,
+  .containerNav li {
+    border-right: none;
+    float: none;
+  }
+
+  a.right.nav {
+    @include drawALine($nightblue, $snowwhite);
+  }
+
+  nav a#pullLogin {
+    float: right;
+    text-align: right;
+    display: inline-block;
+
+    @include drawALine($snowwhite, $nightblue);
+  }
+
+  #pullLogin {
     display: block;
     position: relative;
   }
+
+  .containerNav {
+    @include makeOuterContainer($nightblue, $nightblue, 50%, 50%);
+  }
 }
+
+// TESTING SPACE
+@include respond-to (medium){
+  
+}
+//
 
 // HEADER QUOTE
 // NEXT STEP~~~WHITE SPACE ABOVE AND BELOW NAV/FOOT

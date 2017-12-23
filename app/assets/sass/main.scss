@@ -24,7 +24,8 @@
   'layout/header',
   'layout/footer',
   'layout/sidebar',
-  'layout/buttons';
+  'layout/buttons',
+  'layout/footerPages';
 
 // 4. Components
 @import
@@ -32,3 +33,7 @@
   'components/projects',
   'components/articles',
   'components/blogpost';
+
+// 5. Pages
+@import
+  'pages/contact';

@@ -68,7 +68,7 @@ h3 {
 h4
  {
   @include type-setting(-3);
-  font-weight: 300;
+  font-weight: 500;
   font-family: $base-font-family;
 
   @include respond-to('small') {
@@ -104,8 +104,33 @@ h5 {
 h2.no-span,
 .projectsContainer,
 .nameStudent,
-.sitemapContainer li {
+.sitemapContainer li,
+.buttonsContact {
+  font-weight: 500;
   font-size: #{$text-font-size}rem;
+
+  @include respond-to('small') {
+    @include type-setting(-2);
+  }
+
+  @include respond-to('medium') {
+    @include type-setting(0);
+  }
+
+  @include respond-to('large') {
+    @include type-setting(2);
+  }
+
+  @include respond-to('huge') {
+    @include type-setting(4);
+  }
+}
+
+p,
+.privacyContainer li,
+.conditionsContainer li {
+  font-size: #{$text-font-size-mobile}rem;
+  font-weight: 100;
 
   @include respond-to('small') {
     @include type-setting(-2);

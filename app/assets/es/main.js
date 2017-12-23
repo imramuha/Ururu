@@ -1,7 +1,8 @@
 'use strict';
 'use strict';
 
-import { Person, Student, Project } from './models';
+import { Person, Student, Project, Post } from './models';
+import { Button } from './buttons';
 import { GridOverlayElement } from './grid';
 
 // using requirejs
@@ -32,14 +33,39 @@ class App {
     this._btnGMB = document.querySelector('.buttonGMB');
     this._btnCMO = document.querySelector('.buttonCMO');
 
-
     // init funx
     this.resizeWindow();
     this.loadData();
-    //this.loadDataBlogPosts();
 
+
+    //this.loadDataBlogPosts();
     window.addEventListener('resize', () => this.resizeWindow());
+    // instantie van een functie uit een andere jv document -> wel nog te importeren
+    let post = new Person();
+    post.test();
+
+    let toggleButton = new Button();
   }
+
+  togglePav  () {
+    console.log('pavnacv');
+  }
+  /*toggleMenu() {   
+    if(this._toggle.style.display == "block") { // if is menuBox displayed, hide it
+      this._toggle.style.display = "none";
+    }
+    else { // if is menuBox hidden, display it
+      this._toggle.style.display = "block";
+    }
+  }*/
+  /*myFunction() {
+    var x = document.querySelector(".menu");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+  }*/
 
   resizeWindow () {
     this._gridOverlayElement.updateRendering(window.innerWidth, Math.max(
@@ -87,7 +113,7 @@ class App {
     } else if (document.title == "About us"){
       courses.forEach(function (value, i) {
         tempStr += `  
-          <p>${courses[i].courseTitle}</p>
+          <h2>${courses[i].courseTitle}</h2>
           <article>${courses[i].courseContent}</article>`;
         console.log(value);
     })

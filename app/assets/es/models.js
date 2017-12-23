@@ -19,6 +19,10 @@ export class Person {
   toString () {
     return `My name is ${this.firstName} ${this.surName}`;
   }
+
+  test() {
+    console.log('test');
+  }
 }
 
 export class Project {
