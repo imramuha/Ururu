@@ -3,15 +3,19 @@
 
 import { Person, Student, Project, Post } from './models';
 import { Button } from './buttons';
+import { Login, Register } from './login';
 import { GridOverlayElement } from './grid';
+import { Projects } from './projects';
+import { PageIndex } from './pageIndex';
 
 // using requirejs
 //const projectsi = require('../data/projects.json');
 // importing all json files
-import { projects } from '../data/projects.json'
-import { courses } from '../data/aboutUs.json'
-import { posts } from '../data/blogposts.json'
-import { articles } from '../data/articles.json'
+import { projects } from '../../_hb/data/projects.json'
+import { courses } from '../../_hb/data/aboutus.json'
+import { posts } from '../../_hb/data/blogposts.json'
+import { articles } from '../../_hb/data/articles.json'
+
 
 class App {
   constructor () {
@@ -33,18 +37,30 @@ class App {
     this._btnGMB = document.querySelector('.buttonGMB');
     this._btnCMO = document.querySelector('.buttonCMO');
 
+    // check if a "users" key exists, if not -> create an admin user. 
+    if (localStorage.getItem("users") === null) {
+      let _adminUser =  [{"user": "Ururu", "pass": "--fixplease"}];
+      localStorage.setItem('users', JSON.stringify(_adminUser));
+    }
+
     // init funx
     this.resizeWindow();
     this.loadData();
-
+    
 
     //this.loadDataBlogPosts();
     window.addEventListener('resize', () => this.resizeWindow());
+
+     // check if a "users" key exists, if not -> create an admin user. 
+    if (localStorage.getItem("users") === null) {
+      let _adminUser =  [{"user": "Ururu", "pass": "--fixplease"}];
+      localStorage.setItem('users', JSON.stringify(_adminUser));
+    }
+    
     // instantie van een functie uit een andere jv document -> wel nog te importeren
     let post = new Person();
     post.test();
-
-    let toggleButton = new Button();
+    
   }
 
   togglePav  () {
@@ -184,6 +200,12 @@ class App {
 
     const st1 = new Student('362453', 'philippe.depauw@arteveldehs.be', 'Philippe', 'De Pauw - Waterschoot');
     console.log(st1.toString());
+
+    let toggleButton = new Button();
+    let userRegister = new Register();
+    //let userLogin = new Login();
+    let propro = new Projects();
+    let indexPage = new PageIndex();
   }
 };
 

@@ -1,0 +1,43 @@
+{{!-- pages/login.hbs --}}
+
+{{#> layouts/base title="Login" pathToRoot="./" }}
+
+{{#* inline "head-block"}}        
+          <div class="containerQuote">
+            <h1>"Login"</h1>
+          </div> 
+{{/inline}}
+
+ {{#*inline "content-block"}}
+ <div class="buttonContainer">
+    <div class="sectionDescription">
+      <h2 class="no-span">overview Ururu</h2>
+    </div>
+  </div>
+  <div class="fb-grid__container">
+        <div class="loginContainer">
+            <div class="loginPageBtn">
+                <a href="login.html">Login</a>
+            </div>
+            <div class="registerPageBtn">
+                <a href="register.html">Register</a>
+            </div>
+            <div class="loginForm">
+                <h2>Username</h2>
+                <input class="inputLoginUsername" type="text" value=""><br>
+                <h2>Password</h2>
+                <input class="inputLoginPassword" type="password" value=""><br>
+            </div>
+            <div class="loginBtn">
+                <a class="loginButton" href="#">Login</a>
+            </div>
+        </div> 
+    </div>
+ {{/inline}}
+
+
+{{#*inline scripts-block}}
+      {{!-- Custom scripts per pag.e --}}
+{{/inline}}
+
+{{/layouts/base}}

@@ -8,13 +8,28 @@
           </div> 
 {{/inline}}
 
+
+
+
  {{#*inline "content-block"}}
+
+
+<section id="menu"></section>
  <div class="buttonContainer">
     <div class="sectionDescription">
       <h2 class="no-span">overview projects</h2>
     </div>
   </div>
   <div class="projectsContainer"></div>  
+   <script id="patato" type="text/x-handlebars-template">
+  {{#each (lookup projects 1)}}
+ <div>Mt name is {{projects.1.projectId}} and my project name is {{projects.1.nameProject}} </div>
+{{/each}}
+    {{{{raw-helper}}}}
+      {{projects}}
+    {{{{/raw-helper}}}}
+    
+ </script>
  {{/inline}}
 
 {{/layouts/base}}
