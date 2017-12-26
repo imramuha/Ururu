@@ -1,0 +1,40 @@
+// ABOUTUS ~~
+.aboutusBtn {
+  @include createABorder(5px, bottomRight, $nightblue, 300px);
+
+  margin-bottom: 80px;
+}
+
+.MMPBtn,
+.GMBBtn,
+.CMOBtn {
+  margin-bottom: 50px;
+  display: flex;
+}
+
+.MMPBtn a,
+.GMBBtn a,
+.CMOBtn a {
+  @include boxShadow();
+  @include createRoundButton(100%, $nightblue, $snowwhite);
+
+  border-radius: 0;
+  width: 100%;
+}
+
+// MEDIA ------------------------------------------------------------------------------- aboutus~~
+@include respond-to ('large') {
+  .aboutusBtn {
+    @include createABorder(5px, bottomRight, $nightblue, 65px);
+
+    width: 100%;
+    display: inline-block;
+  }
+
+  .MMPBtn,
+  .GMBBtn,
+  .CMOBtn {
+    width: 33%;
+    display: inline-flex;
+  }
+}

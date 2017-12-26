@@ -155,22 +155,24 @@ class App {
       if(articles[i].articleId % 2 == 0)
       {
         tempStr += `  
-        <div class="wrapper">
-          <img  class="imgLeft" src="../assets/images/articles/${articles[i].articleImage}">
-          <div class="textRight"><h4>${articles[i].articleTitle}>
-            <h4>${articles[i].articleThumbText}</h4>
-            <h4>${articles[i].articleDate}</h4>
+        <div class="articleDetailContainer">
+          <img  class="imgArticle Left" src="../assets/images/articles/${articles[i].articleImage}">
+          <div class="textArticle Right">
+            <p>${articles[i].articleTitle}</p>
+            <p class="articleThumb">${articles[i].articleThumbText}</p>
+            <p>${articles[i].articleDate}</p>
           </div>
         </div>`;
         console.log(articles[i].articleId);
       } else {
         tempStr += `  
-        <div class="wrapper">
-          <img  class="imgRight" src="../assets/images/articles/${articles[i].articleImage}">
-          <div class="textLeft"><h4>${articles[i].articleTitle}>
-            <h4>${articles[i].articleThumbText}</h4>
-            <h4>${articles[i].articleDate}</h4>
+        <div class="articleDetailContainer">
+          <div class="textArticle Left">
+            <p>${articles[i].articleTitle}</p>
+            <p class="articleThumb">${articles[i].articleThumbText}</p>
+            <p>${articles[i].articleDate}</p>
           </div>
+          <img  class="imgArticle Right" src="../assets/images/articles/${articles[i].articleImage}">
         </div>`;        
       }
       console.log(value);

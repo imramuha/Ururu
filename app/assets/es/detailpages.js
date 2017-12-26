@@ -32,38 +32,31 @@ export class DetailPages {
         `;
 
         tempStr +=`
-        <div>
-          <div class="nameStudent">
-            ${projects[i].nameStudent}
-          </div>
-          <div class="detailStudent">
-            <h2>${projects[i].course}</h2>
-            <h2>${projects[i].specialization}</h2>
-            <h2>${projects[i].year}</h2>
+        <div class="detailStudentContainer">
+          <div class="detailStudentDetail">
+          <h4>${projects[i].nameStudent}         <i class="fa fa-star left foot" aria-hidden="true"></i>  </h4>
+            <h4>${projects[i].course}</h4>
+            <h4>${projects[i].specialization}</h4>
+            <h4>${projects[i].year}</h4>
           </div> 
-        </div>
-        <div class="nameProject">           
-          <h2>${projects[i].nameProject}</h2>
-          <ul>
-              <li><i class="fa fa-heart left foot" aria-hidden="true"></i></li> 
-              <li><i class="fa fa-thumbs-up left foot" aria-hidden="true"></i></li>  
-              <li><i class="fa fa-eye left foot" aria-hidden="true"></i></li>   
-            </ul>
-        </div>
-        <div class="socialContainer">
-          <div>
-            <h2>Share the awesomeness</h2>
-          </div>
-          <div>
-            <ul>
-              <li><i class="fa fa-facebook left foot" aria-hidden="true"></i></li> 
-              <li><i class="fa fa-twitter left foot" aria-hidden="true"></i></li>  
-              <li><i class="fa fa-google left foot" aria-hidden="true"></i></li>   
-            </ul>
+          <div class="nameProjectDetail">           
+            <h4>${projects[i].nameProject}</h4>
+            <i class="fa fa-heart left foot" aria-hidden="true"></i> 
+            <i class="fa fa-thumbs-up left foot" aria-hidden="true"></i>  
+            <i class="fa fa-eye left foot" aria-hidden="true"></i>  
           </div>
         </div>
-        <div class="projectAssignment">
-          <h2>${projects[i].assignment}</h2>
+        <div class="socialContainerDetail">
+          <div class="shareContainer">
+            <h4>Share the awesomeness
+            <i class="fa fa-facebook left foot" aria-hidden="true"></i> 
+            <i class="fa fa-twitter left foot" aria-hidden="true"></i>
+            <i class="fa fa-google left foot" aria-hidden="true"></i>  
+            </h4>
+          </div>
+        </div>
+        <div class="projectAssignmentDetail">
+          <p>${projects[i].assignment}</p>
         </div>
         <div class="projectImages>`; 
         
@@ -71,7 +64,7 @@ export class DetailPages {
           tempStr += `<img class="imgProject" src="../assets/images/projects/${projects[i].imgProject[j]}">`;
         }
         tempStr += `
-        </div>`; 
+        </div><br>`; 
         } 
         console.log(tempStr);
         this._projectContainer.innerHTML = tempStr;  

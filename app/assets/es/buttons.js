@@ -5,6 +5,9 @@ export class Button {
     // buttons DOM
     this._toggleMenu = document.getElementById('pullNav');
     this._navBar = document.querySelector('.menu');
+
+    // about us buttons
+
     // eventlistener added
     this._toggleMenu.addEventListener('click', evt => this.toggleNav(evt));
     window.addEventListener('resize', evt => this.resizeNav(evt));
@@ -22,6 +25,7 @@ export class Button {
     if (window.innerWidth < 768) {
       this._navBar.style.display = 'none';
       // console.log('check~');
+
     } else {
       this._navBar.style.display = 'block';
     }

@@ -109,7 +109,8 @@ h2.no-span,
 .sitemapContainer li,
 .buttonsContact,
 .dateContainer h2,
-.articleContent article {
+.articleContent article,
+.textArticle p {
   font-weight: 500;
   font-size: #{$text-font-size}rem;
 

@@ -31,11 +31,12 @@
 @import
   'components/gridoverlay',
   'components/projects',
-  'components/articles',
+  'components/news',
   'components/blogpost';
 
 // 5. Pages
 @import
   'pages/contact',
   'pages/detailpages',
-  'pages/login';;
+  'pages/login',
+  'pages/aboutus';

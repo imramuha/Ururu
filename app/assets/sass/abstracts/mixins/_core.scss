@@ -113,6 +113,7 @@
 @mixin containers () {
   width: 100%;
   padding: 0 8%;
+  margin: 15px 0;
   -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
   -moz-box-sizing: border-box;    /* Firefox, other Gecko */
   box-sizing: border-box;         /* Opera/IE 8+ */
@@ -154,6 +155,18 @@
       border-bottom: $size solid $nightblue;
     }
   }
+
+  @if $direction == bottomRight {
+    //border-top: $size solid $color;
+    &::before {
+      content: '';
+      position: absolute;
+      height: $height;
+      right: 0;
+      width: 50%;
+      border-bottom: $size solid $nightblue;
+    }
+  }
 }
 
 // a container for footer/navigation
@@ -171,7 +184,7 @@
   &::before {
     border-top: $size solid $color;
     padding: 0 10px;
-    margin: 0 10px;
+    margin: 0 30px;
     content: '';
     display: table-cell;
     position: relative;
