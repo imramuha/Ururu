@@ -1,10 +1,8 @@
 // --PRIVACY --CONDITIONS
 .privacyContainer,
 .conditionsContainer {
-  width: 90%;
   margin: 0 auto;
   text-align: justify;
-  text-justify: inter-word;
 }
 
 .privacyContainer ul,
@@ -15,18 +13,15 @@
 
 .privacyContainer a,
 .conditionsContainer a {
-    color: $nightblue;
-    text-decoration: none;
+  color: $nightblue;
+  text-decoration: none;
 }
 
 // --SITEMAP
 .sitemapContainer {
   text-decoration: none;
-}
 
-.sitemapContainer ul {
-  width: 70%;
-  margin: auto;
+  @include containers();
 }
 
 .sitemapContainer li {
@@ -35,5 +30,6 @@
 
 .sitemapContainer a {
   text-decoration: none;
+
   @include drawALine($nightblue, $snowwhite);
 }

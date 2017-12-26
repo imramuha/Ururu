@@ -1,0 +1,84 @@
+
+// LOGIN~~
+.pageBtn {
+  margin: 20px 25px;
+}
+
+.loginForm h2 {
+  margin: 25px 0 5px 15px;
+}
+
+.loginPageBtn,
+.registerPageBtn {
+  width: 50%;
+  float: left;
+  display: flex;
+  margin-bottom: 50px;
+}
+
+.signInBtn,
+.registerBtn {
+  width: 100%;
+  clear: both;
+  display: flex;
+  margin: 0 4px 50px;
+}
+
+.loginForm {
+  margin: 0 0 30px;
+}
+
+.loginPageBtn a,
+.registerPageBtn a,
+.signInBtn a,
+.registerBtn a {
+  @include boxShadow();
+  @include createRoundButton(100%, $nightblue, $snowwhite);
+}
+
+.loginPageBtn a,
+.registerPageBtn a {
+  border-radius: 0;
+}
+
+// input user and pass
+.inputLoginUsername,
+.inputLoginPassword,
+.inputRegisterUsername,
+.inputRegisterPassword {
+  width: 100%;
+  border: 2px solid $nightblue;
+  padding: 5px;
+  margin: 0;
+  color: $nightblue;
+  font-family: $base-font-family;
+  font-size: #{$base-font-size}pt;
+  border-radius: 100px;
+
+  @include boxShadow();
+}
+
+// MEDIA --------------------------------------------------------------------------  LOGIN~~ REGISTER~~
+@include respond-to('medium') {
+  .loginContainer,
+  .registerContainer {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+
+@include respond-to('large') {
+  .loginContainer,
+  .registerContainer {
+    width: 60%;
+    margin: 0 auto;
+  }
+}
+
+@include respond-to('huge') {
+  .loginContainer,
+  .registerContainer {
+    width: 40%;
+    margin: 0 auto;
+  }
+}

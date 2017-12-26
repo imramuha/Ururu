@@ -157,30 +157,3 @@ a.left.nav,
     height: 350px;
   }
 }
-
-// LOGIN~~
-.loginContainer {
-  padding: 0px auto;
-  top: 200;
-}
-
-.loginContainer a,
-.loginForm a {
-  text-decoration: none;
-}
-.loginPageBtn {
-  @include createABorder(3px, right, $snowwhite, 0);
-}
-
-.registerPageBtn {
-  float: right;
-  clear: both;
-}
-
-.loginForm a {
-  text-decoration: none;
-}
-
-.loginBtn {
-  @include createRoundButton (80%, $nightblue, $snowwhite)
-}

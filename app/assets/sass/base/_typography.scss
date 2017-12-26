@@ -11,7 +11,6 @@ h3,
 h4,
 h5,
 h6 {
-
   @include type-setting(1);
 
   margin: #{$base-line-height}rem 0;
@@ -20,6 +19,7 @@ h6 {
 
 h1 {
   font-family: $headings-font-family;
+
   @include type-setting(-1);
 
   @include respond-to('small') {
@@ -41,6 +41,7 @@ h1 {
 
 h2 {
   font-family: $headings-font-family;
+
   @include type-setting(0);
 
   @include respond-to('small') {
@@ -62,12 +63,13 @@ h2 {
 
 h3 {
   font-family: $headings-font-family;
+
   @include type-setting(4);
 }
 
-h4
- {
+h4 {
   @include type-setting(-3);
+
   font-weight: 500;
   font-family: $base-font-family;
 
@@ -105,7 +107,9 @@ h2.no-span,
 .projectsContainer,
 .nameStudent,
 .sitemapContainer li,
-.buttonsContact {
+.buttonsContact,
+.dateContainer h2,
+.articleContent article {
   font-weight: 500;
   font-size: #{$text-font-size}rem;
 
@@ -128,7 +132,8 @@ h2.no-span,
 
 p,
 .privacyContainer li,
-.conditionsContainer li {
+.conditionsContainer li,
+.contactInfo p {
   font-size: #{$text-font-size-mobile}rem;
   font-weight: 100;
 

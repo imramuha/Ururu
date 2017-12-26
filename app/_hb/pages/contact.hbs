@@ -9,88 +9,88 @@
 {{/inline}}
 
  {{#*inline "content-block"}}
-    <div class="fb-grid__container">
-      <div class="containerContact">
-      <div class="buttonContainer">
-          <div class="sectionDescription">
-            <h2 class="no-span">get in touch</h2>
+      <div class="containerContact container">
+        <form class="formContact">
+          <div class="buttonContainer">
+            <div class="sectionDescription">
+              <h2 class="no-span">get in touch</h2>
+            </div>
           </div>
-      </div>
-      <form class="formContact">
-        <div class="inputName">
-          <h2>name</h2>
-          <input class="inputName" type="text"><br>
-        </div>
-        <div class="inputEmail">
-          <h2>email</h2>
-          <input class="inputEmail" type="text"><br>
-        </div>
-          <h2>question</h2>
-          <textarea name="cf_message"></textarea><br>
+          <div class="inputName">
+            <h2>name</h2>
+            <input class="inputName" type="text"><br>
+          </div>
+          <div class="inputEmail">
+            <h2>email</h2>
+            <input class="inputEmail" type="text"><br>
+          </div>
+            <h2>question</h2>
+            <textarea name="cf_message"></textarea><br>
           <div class="sendButton">
-              <a class="buttonsHome contact">Send</a>
+            <a >Send</a>
           </div>
+          <div class="buttonContainer">
+            <div class="sectionDescription">
+              <h2 class="no-span">Find us on the map</h2>
+            </div>
           </div>
-      </form>
-      <div class="buttonContainer">
+          <div class="map"></div>
+        </form>
+
+        <div class="contactInfo">
+          <div class="buttonContainer">
           <div class="sectionDescription">
-            <h2 class="no-span">Find us on the map</h2>
+            <h2 class="no-span">Get to know us better</h2>
           </div>
+        </div>
+          <h4>Adres</h4>
+          <p>Industrieweg 232<br>
+          9030 Gent-Mariakerke, Oost-Vlaanderen</p>
+          <h4>Contact</h4>
+          <p>09 234 86 00</p>
+          <h4>Bereikbaarheid</h4>
+          <p>Op maandag 3 april is het
+          Gentse circulatieplan in
+          werking getreden. Al onze
+          campussen blijven vlot
+          bereikbaar, maar het zou
+          kunnen dat jouw route naar
+          onze campus zal
+          veranderen. Je vindt hier een
+          samenvatting van alle
+          verkeerswijzigingen rondom
+          onze campussen.</p>
+          <h4>Met de fiets</h4>
+          <p>Als je in Gent centrum
+          vertrekt, ben je met de fiets
+          ongeveer twintig minuten
+          onderweg naar campus
+          Mariakerke.</p>
+          <h4>Openbaar vervoer</h4>
+          <p>Aan het Sint-Pietersstation
+          kan je bus 65 of 67 nemen.
+          Stap af aan de halte
+          ‘Industrieweg’ en volg de
+          Speystraat ongeveer 300
+          meter richting onze
+          mediacampus.</p>
+          <h4>Met de auto</h4>
+          <p>Campus Mariakerke ligt
+          dicht bij het kruispunt van de
+          R4 (de ring rond Gent) en de
+          N9 die Gent met Eeklo
+          verbindt.</p>
+        </div>
       </div>
 
-      <div class="buttonContainer">
-          <div class="sectionDescription">
-            <h2 class="no-span">You might also be interested in</h2>
-          </div>
-      </div>
-      <div class="contactInfo">
-        <h4>Adres</h4>
-        <p>Industrieweg 232<br>
-        9030 Gent-Mariakerke, Oost-Vlaanderen</p>
-        <h4>Contact</h4>
-        <p>09 234 86 00</p>
-        <h4>Bereikbaarheid</h4>
-        <p>Op maandag 3 april is het
-        Gentse circulatieplan in
-        werking getreden. Al onze
-        campussen blijven vlot
-        bereikbaar, maar het zou
-        kunnen dat jouw route naar
-        onze campus zal
-        veranderen. Je vindt hier een
-        samenvatting van alle
-        verkeerswijzigingen rondom
-        onze campussen.</p>
-        <h4>Met de fiets</h4>
-        <p>Als je in Gent centrum
-        vertrekt, ben je met de fiets
-        ongeveer twintig minuten
-        onderweg naar campus
-        Mariakerke.</p>
-        <h4>Openbaar vervoer</h4>
-        <p>Aan het Sint-Pietersstation
-        kan je bus 65 of 67 nemen.
-        Stap af aan de halte
-        ‘Industrieweg’ en volg de
-        Speystraat ongeveer 300
-        meter richting onze
-        mediacampus.</p>
-        <h4>Met de auto</h4>
-        <p>Campus Mariakerke ligt
-        dicht bij het kruispunt van de
-        R4 (de ring rond Gent) en de
-        N9 die Gent met Eeklo
-        verbindt.</p>
-      </div>
-      </div>
 
-      </div>
 
  {{/inline}}
 
 
-{{#*inline scripts-block}}
+{{#*inline "scripts-block"}}
       {{!-- Custom scripts per pag.e --}}
+      <script async="" defer="" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB_rfqWUw3pD89tgcPY_cFJy0mUg2n9L40&amp;"></script>
 {{/inline}}
 
 {{/layouts/base}}

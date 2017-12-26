@@ -1,0 +1,61 @@
+// detailpagearticle~~ 
+.socialDateContainer {
+  min-height: 20px;
+  position: relative;
+}
+
+.socialContainer ul li {
+  display: inline;
+  float: right;
+  margin: 12x 0 0 17px;
+}
+.socialContainer ul {
+  margin: 0px;
+}
+
+.dateContainer {
+  float: left;
+  color: $skyblue;
+}
+
+.dateContainer h2 {
+  @include createBeforeLine(30px, 3px, $skyblue);
+
+}
+
+.imgProject {
+  @include boxShadow();
+}
+
+// MEDIA --------------------------------------------------------------------------  detailarticlepage~~
+@include respond-to('small') {
+
+}
+
+@include respond-to('medium') {
+    
+}
+
+@include respond-to('large') {
+  .articleImage {
+    width: 49%;
+    float: right;
+    clear: both;
+    margin: 0 0 30px 30px;
+  }
+
+  .articleContent {
+    text-align: left;
+  }
+
+  .socialDateContainer {
+    min-height: 40px;
+    margin-bottom: 50px;
+  }
+}
+
+@include respond-to('huge') {
+
+}
+
+// detailpagearticle~~

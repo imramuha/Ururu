@@ -1,20 +1,22 @@
 // --CONTACT
-.containerContact {
-  width: 80%;
-  margin: 0 auto;
-}
 
 // container form
 .containerContact h2 {
-  margin: 25px 0px 0px;
+  margin: 25px 0 0;
 }
 
+// the sed button
 .sendButton {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: center;
   justify-content: center;
-  margin-left: 8px;
+  margin: 25px 0 25px 8px;
+}
+
+.sendButton a {
+  @include boxShadow();
+  @include createRoundButton(100%, $nightblue, $snowwhite);
 }
 
 // input name email and question
@@ -23,9 +25,12 @@
   width: 100%;
   border: 2px solid $nightblue;
   padding: 5px;
-  margin: 0px;
+  margin: 0;
   color: $nightblue;
   font-family: $base-font-family;
+  font-size: #{$base-font-size}pt;
+
+  @include boxShadow();
 }
 
 // input name and email
@@ -38,25 +43,56 @@
   min-height: 250px;
 }
 
-// send button
-.buttonsHome.contact {
-  width: 100%;
-  margin: 20px 3px 0 0px;
+.contactInfo p {
+  margin: 0;
+  color: $skyblue;
 }
 
+.contactInfo h4 {
+  margin-bottom: 5px;
+}
+
+.contactInfo {
+  margin-bottom: 25px;
+}
+
+.map {
+  width: 100%;
+  height: 300px;
+  border: 5px solid $snowwhite;
+  margin: 25px 0;
+
+  @include boxShadow();
+}
+
+// MEDIA ---------------------------------------------------------------------------------- --CONTACT
 @include respond-to('small') {
-  margin: 25px 3px 0 0px;
+  margin: 25px 3px 0 0;
 }
 
 @include respond-to('medium') {
   .buttonsHome.contact {
-    margin: 30px 3px 0 0px;
+    margin: 30px 3px 0 0;
+  }
+  // to devide our contact page
+  .formContact {
+    width: 50%;
+    float: left;
+  }
+
+  .contactInfo {
+    width: 40%;
+    float: right;
+  }
+
+  .footerWhiteSpace {
+    clear: both;
   }
 }
 
-// MEDIA ---------------------------------------------------------------------------------- --CONTACT
 @include respond-to('large') {
-  .inputName, .inputEmail {
+  .inputName,
+  .inputEmail {
     display: inline-block;
     width: 40%;
   }
@@ -70,7 +106,7 @@
   }
 
   .buttonsHome.contact {
-    margin: 40px 3px 0 0px;
+    margin: 40px 3px 0 0;
   }
 
   .formContact input,
@@ -78,17 +114,17 @@
     width: 100%;
     border: 2px solid $nightblue;
     padding: 5px;
-    margin: 0px;
+    margin: 0;
     color: $nightblue;
     font-family: $base-font-family;
   }
-  .containerContact {
-    width: 100%;
-  }
-}
 
-@include respond-to('huge') {
-  .buttonsHome.contact {
-    margin: 50px 3px 0 0px;
+  .map {
+    height: 400px;
+    margin: 30px 0 50px;
+  }
+
+  .sendButton {
+    margin: 30px 0 50px 16px;
   }
 }

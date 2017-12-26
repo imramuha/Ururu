@@ -7,15 +7,13 @@ import { Login, Register } from './login';
 import { GridOverlayElement } from './grid';
 import { Projects } from './projects';
 import { PageIndex } from './pageIndex';
+import { DetailPages } from './detailpages';
 
-// using requirejs
-//const projectsi = require('../data/projects.json');
 // importing all json files
 import { projects } from '../../_hb/data/projects.json'
 import { courses } from '../../_hb/data/aboutus.json'
 import { posts } from '../../_hb/data/blogposts.json'
 import { articles } from '../../_hb/data/articles.json'
-
 
 class App {
   constructor () {
@@ -46,6 +44,7 @@ class App {
     // init funx
     this.resizeWindow();
     this.loadData();
+    this.initMap();
     
 
     //this.loadDataBlogPosts();
@@ -62,10 +61,7 @@ class App {
     post.test();
     
   }
-
-  togglePav  () {
-    console.log('pavnacv');
-  }
+  
   /*toggleMenu() {   
     if(this._toggle.style.display == "block") { // if is menuBox displayed, hide it
       this._toggle.style.display = "none";
@@ -91,6 +87,22 @@ class App {
     ), 24);
   }
 
+  // voor google maps
+  initMap() {
+    if (document.title == "Contact"){
+      let uluru = {lat: 51.0673017, lng: 3.7004048};
+      let map = new google.maps.Map(document.querySelector('.map'), {
+        zoom: 16,
+        center: uluru
+      });
+      let marker = new google.maps.Marker({
+        position: uluru,
+        map: map
+      });
+    }
+  }
+
+  // loading jsong data for projects/news and abous us pages
   loadData () {
     let tempStr = '';
 
@@ -173,21 +185,25 @@ class App {
       posts.forEach(function (value, i) {
         tempStr += `
           <div class="blogPost">
-          <div class="overlay" style='background: url("../assets/images/${posts[i].postImg[0]}") no-repeat fixed center'></div>
+          <div class="overlay"><img src="../assets/images/${posts[i].postImg[0]}" alt="blurred photo about topic of the blogpost"></div>
           <div class="box above">
           <img src="../assets/images/${posts[i].postImg[1]}" alt="Creater of the blogpost">
-            <h4>${posts[i].postCreator}</h4>
+            <h3>${posts[i].postCreator}</h3>
             <p>${posts[i].postCreatorNature}</p>
           </div>
           <div class="box below">
-            <p>${posts[i].postTitle}</p>
+            <h4>${posts[i].postTitle}</h4>
           </div>
         </div>`;
         console.log(value);
       })
       this._blogPostsContainer.innerHTML = tempStr;
   }
+
+ 
 }
+
+
 
 
 
@@ -206,6 +222,7 @@ class App {
     //let userLogin = new Login();
     let propro = new Projects();
     let indexPage = new PageIndex();
+    let detailPage = new DetailPages();
   }
 };
 

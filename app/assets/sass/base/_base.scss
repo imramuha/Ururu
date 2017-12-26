@@ -1,11 +1,5 @@
 
 // STYLE GUIDE //
-.container {
-  color: $nightblue;
-  background: $rainycloud;
-  padding: 20px;
-}
-
 .titel {
   font-family: $headings-font-family;
 }
@@ -93,4 +87,7 @@
 
 .fa {
   @include icon-hover-color(#2e4b51, $headings-font-size);
+}
+.container {
+  @include containers();
 }
