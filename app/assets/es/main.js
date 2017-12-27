@@ -111,26 +111,44 @@ class App {
       projects.forEach(function (value, i) {
         if(projects[i].projectId % 2 == 0)
         {
-          console.log(projects[i].projectId);
-        }
-        tempStr +=`
-        <div class="project ${projects[i].projectId}">
-          <div>
-            <div class="textHover">
+          tempStr +=`
+            <div class="project ${projects[i].projectId} Left">
+            <div>
+              <div class="textHover">
+              </div>
+              <div>
+              <img class="imgProject" src="../assets/images/projects/${projects[i].imgProject[0]}">
+              </div>
             </div>
             <div>
-            <img class="imgProject" src="../assets/images/projects/${projects[i].imgProject[0]}">
+              <div class="nameStudent">
+                ${projects[i].nameStudent}
+              </div>
+              <div class="nameProject">            
+                <h2>${projects[i].nameProject}</h2>
+              </div>
             </div>
-          </div>
-          <div>
-            <div class="nameStudent">
-              ${projects[i].nameStudent}
+          </div>`;
+        } else {
+          tempStr +=`
+          <div class="project ${projects[i].projectId} Right">
+            <div>
+              <div class="textHover">
+              </div>
+              <div>
+              <img class="imgProject" src="../assets/images/projects/${projects[i].imgProject[0]}">
+              </div>
             </div>
-            <div>            
-              <h2>${projects[i].nameProject}</h2>
+            <div>
+              <div class="nameStudent">
+                ${projects[i].nameStudent}
+              </div>
+              <div class="nameProject">            
+                <h2>${projects[i].nameProject}</h2>
+              </div>
             </div>
-          </div>
-        </div>`;
+          </div>`;
+        }
         console.log(value);
       })
       console.log(tempStr);

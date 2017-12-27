@@ -25,7 +25,7 @@
 		},
 		{
 			"projectId": "2",
-			"nameProject": "Memorial Van Damme 40ste Editie",
+			"nameProject": "Memorial Van Damme",
 			"nameStudent": "Wannes Vansteenhuyse" ,
 			"course": "Crossmedia-ontwerp",
 			"specialization": "Graphic Design",
@@ -58,7 +58,7 @@
 		},
 		{
 			"projectId": "5",
-			"nameProject": "Bachelorproef - StreetArtMap",
+			"nameProject": "StreetArtMap",
 			"nameStudent": "Bram De Backer" ,
 			"course": "Multimediaproductie",
 			"specialization": "Audiovisual Design",
@@ -102,7 +102,7 @@
 		},
 		{
 			"projectId": "9",
-			"nameProject": "New Media Apps � FitChallenge",
+			"nameProject": "FitChallenge",
 			"nameStudent": "Manon Adriaens & Alyssa Mae Enzon" ,
 			"course": "Crossmedia-ontwerp",
 			"specialization": "Photo Design",
@@ -113,7 +113,7 @@
 		},
 		{
 			"projectId": "10",
-			"nameProject": "Hybrid App � Blitter",
+			"nameProject": "Blitter",
 			"nameStudent": "Pieter-Jan Sas" ,
 			"course": "Multimediaproductie",
 			"specialization": "New Media Development",
@@ -146,7 +146,7 @@
 		},
 		{
 			"projectId": "13",
-			"nameProject": "Web App - Creathing",
+			"nameProject": "Creathing",
 			"nameStudent": "Tine VanCoillie" ,
 			"course": "Multimediaproductie",
 			"specialization": "New Media Development",
@@ -179,7 +179,7 @@
 		},
 		{
 			"projectId": "16",
-			"nameProject": "Title Sequence � Heathen",
+			"nameProject": "Heathen",
 			"nameStudent": "Lander Denys" ,
 			"course": "Multimediaproductie",
 			"specialization": "Audiovisual Design",
@@ -201,7 +201,7 @@
 		},
 		{
 			"projectId": "18",
-			"nameProject": "Google Online Marketing Challenge",
+			"nameProject": "Google Online Marketing",
 			"nameStudent": "GMB team" ,
 			"course": "Grafimediabeleid",
 			"specialization": "Crossmedia",
@@ -212,7 +212,7 @@
 		},
 		{
 			"projectId": "19",
-			"nameProject": "Hybrid App � Spot App",
+			"nameProject": "Spot App",
 			"nameStudent": "Maxim Van Hove" ,
 			"course": "Multimediaproductie",
 			"specialization": "New Media Development",
@@ -223,7 +223,7 @@
 		},
 		{
 			"projectId": "20",
-			"nameProject": "Hybrid App � Trash",
+			"nameProject": "Trash",
 			"nameStudent": "Bert Goossens" ,
 			"course": "Multimediaproductie",
 			"specialization": "New Media Development",

@@ -28,87 +28,88 @@ export class PageIndex {
         for (var i = 0; i < 4; i++){
             if(projects[i].projectId % 2 == 0){
         tempStrProjects +=`
-        <div class="project left ${projects[i].projectId}">
-          <div>
-            <div class="textHover">
+            <div class="project ${projects[i].projectId} Left">
+            <div>
+              <div class="textHover">
+              </div>
+              <div>
+              <img class="imgProject" src="../assets/images/projects/${projects[i].imgProject[0]}">
+              </div>
             </div>
             <div>
-            <img class="imgProject" src="../assets/images/projects/${projects[i].imgProject[0]}">
+              <div class="nameStudent">
+                ${projects[i].nameStudent}
+              </div>
+              <div class="nameProject">            
+                <h2>${projects[i].nameProject}</h2>
+              </div>
             </div>
-          </div>
-          <div>
-            <div class="nameStudent">
-              ${projects[i].nameStudent}
-            </div>
-            <div>            
-              <h2>${projects[i].nameProject}</h2>
-            </div>
-          </div>
-        </div>`;
+          </div>`;
         } else {
-            tempStrProjects +=`
-        <div class="project right ${projects[i].projectId}">
-          <div>
-            <div class="textHover">
+          tempStrProjects +=`
+          <div class="project ${projects[i].projectId} Right">
+            <div>
+              <div class="textHover">
+              </div>
+              <div>
+              <img class="imgProject" src="../assets/images/projects/${projects[i].imgProject[0]}">
+              </div>
             </div>
             <div>
-            <img class="imgProject" src="../assets/images/projects/${projects[i].imgProject[0]}">
+              <div class="nameStudent">
+                ${projects[i].nameStudent}
+              </div>
+              <div class="nameProject">            
+                <h2>${projects[i].nameProject}</h2>
+              </div>
             </div>
-          </div>
-          <div>
-            <div class="nameStudent">
-              ${projects[i].nameStudent}
-            </div>
-            <div>            
-              <h2>${projects[i].nameProject}</h2>
-            </div>
-          </div>
-        </div>`;
+          </div>`;
         }
     }
     console.log(tempStrProjects);
         this._projectsContainer.innerHTML = tempStrProjects;
 
         for (var i = 0; i < 3; i++)
-        {
- 
-                if(articles[i].articleId % 2 == 0){
-                  tempStrArticles += `  
-                  <div class="wrapper">
-                    <img  class="imgLeft" src="../assets/images/articles/${articles[i].articleImage}">
-                    <div class="textRight"><h4>${articles[i].articleTitle}>
-                      <h4>${articles[i].articleThumbText}</h4>
-                      <h4>${articles[i].articleDate}</h4>
-                    </div>
-                  </div>`;
-                  console.log(articles[i].articleId);
-                } else {
-                  tempStrArticles += `  
-                  <div class="wrapper">
-                    <img  class="imgRight" src="../assets/images/articles/${articles[i].articleImage}">
-                    <div class="textLeft"><h4>${articles[i].articleTitle}>
-                      <h4>${articles[i].articleThumbText}</h4>
-                      <h4>${articles[i].articleDate}</h4>
-                    </div>
-                  </div>`;        
-                }          
+        { 
+          if(articles[i].articleId % 2 == 0){
+              tempStrArticles += `  
+              <div class="articleDetailContainer">
+                <img  class="imgArticle Left" src="../assets/images/articles/${articles[i].articleImage}">
+                <div class="textArticle Right">
+                  <p>${articles[i].articleTitle}</p>
+                  <p class="articleThumb">${articles[i].articleThumbText}</p>
+                  <p>${articles[i].articleDate}</p>
+                </div>
+              </div>`;
+              console.log(articles[i].articleId);
+            } else {
+              tempStrArticles += `  
+              <div class="articleDetailContainer">
+                <div class="textArticle Left">
+                  <p>${articles[i].articleTitle}</p>
+                  <p class="articleThumb">${articles[i].articleThumbText}</p>
+                  <p>${articles[i].articleDate}</p>
+                </div>
+                <img  class="imgArticle Right" src="../assets/images/articles/${articles[i].articleImage}">
+              </div>`;
+          }          
         }
         this._articlesContainer.innerHTML = tempStrArticles;
 
         for (var i = 0; i < 3; i++)
         {
                 tempStrPosts += `
-                  <div class="blogPost">
-                  <div class="overlay" style='background: url("../assets/images/${posts[i].postImg[0]}") no-repeat fixed center'></div>
-                  <div class="box above">
-                  <img src="../assets/images/${posts[i].postImg[1]}" alt="Creater of the blogpost">
-                    <h4>${posts[i].postCreator}</h4>
-                    <p>${posts[i].postCreatorNature}</p>
-                  </div>
-                  <div class="box below">
-                    <p>${posts[i].postTitle}</p>
-                  </div>
-                </div>`;
+                <div class="blogPost">
+                <div class="overlay"><img src="../assets/images/${posts[i].postImg[0]}" alt="blurred photo about topic of the blogpost"></div>
+                <div class="box above">
+                <img src="../assets/images/${posts[i].postImg[1]}" alt="Creater of the blogpost">
+                  <h3>${posts[i].postCreator}</h3>
+                  <p>${posts[i].postCreatorNature}</p>
+                </div>
+                <div class="box below">
+                  <h4>${posts[i].postTitle}</h4>
+                </div>
+              </div>`;
         }
         this._blogPostsContainer.innerHTML = tempStrPosts;    
     }
