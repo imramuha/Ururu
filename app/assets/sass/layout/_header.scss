@@ -21,7 +21,16 @@
 }
 
 .containerNav {
-  @include makeOuterContainer($snowwhite, $nightblue, 50%, 50%);
+  @include makeOuterContainer($snowwhite, $nightblue, 85%, 85%);
+  @include boxShadow();
+  height: 48px;
+
+  @include respond-to ('large'){
+      height: 53px;
+  }
+  @include respond-to ('huge'){
+    height: 61px;
+}
 }
 
 .navigation {
@@ -32,6 +41,7 @@
   background: none;
   box-shadow: 1px 6px 4px -4px $nightblue;
   position: relative;
+  z-index: 2;
 }
 
 li.listBoxFoot {
@@ -59,6 +69,10 @@ a.left.nav,
 #pullNav {
   display: none;
   padding: 10px 20px;
+}
+
+.navIcon {
+  color: $snowwhite;
 }
 
 @include respond-to('mediumx') {
@@ -103,6 +117,7 @@ a.left.nav,
 
   .containerNav {
     @include makeOuterContainer($nightblue, $nightblue, 50%, 50%);
+    height: 41px;
   }
 }
 
@@ -117,42 +132,37 @@ a.left.nav,
   height: 250px;
   box-sizing: border-box;
   background: $snowwhite;
-
-  /* // example to use my website responsive maker
-  @include respond-to('medium') {
-  background: blue;} */
 }
 
 .containerQuote {
-  @include createABorder(4px, bottom, $nightblue, 130px);
+  @include createABorder(4px, bottom, $nightblue, 120px);
 
   height: 130px;
   box-sizing: border-box;
-  background: $snowwhite;
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  padding: 5% 20%;
+  padding: 3% 8%;
 
   @include respond-to('small') {
-    @include createABorder(5px, bottom, $nightblue, 200px);
+    @include createABorder(5px, bottom, $nightblue, 140px);
 
-    height: 200px;
+    height: 160px;
   }
 
   @include respond-to('medium') {
-    @include createABorder(4px, bottom, $nightblue, 250px);
+    @include createABorder(4px, bottom, $nightblue, 180px);
 
-    height: 250px;
+    height: 220px;
   }
 
   @include respond-to('large') {
-    @include createABorder(5px, bottom, $nightblue, 300px);
+    @include createABorder(5px, bottom, $nightblue, 210px);
 
-    height: 300px;
+    height: 260px;
   }
 
   @include respond-to('huge') {
-    @include createABorder(5px, bottom, $nightblue, 350px);
+    @include createABorder(5px, bottom, $nightblue, 250px);
 
     height: 350px;
   }

@@ -49,9 +49,9 @@ export class DetailPages {
         <div class="socialContainerDetail">
           <div class="shareContainer">
             <h4>Share the awesomeness
-            <i class="fa fa-facebook left foot" aria-hidden="true"></i> 
-            <i class="fa fa-twitter left foot" aria-hidden="true"></i>
-            <i class="fa fa-google left foot" aria-hidden="true"></i>  
+            <a href="https://facebook.com"><i class="fa fa-facebook left foot" aria-hidden="true"></i></a>
+            <a href="https://twitter.com"><i class="fa fa-twitter left foot" aria-hidden="true"></i></a>
+            <a href="https://plus.google.com"><i class="fa fa-google left foot" aria-hidden="true"></i></a>  
             </h4>
           </div>
         </div>

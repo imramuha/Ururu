@@ -12,6 +12,7 @@ export class Button {
     this._toggleMenu.addEventListener('click', evt => this.toggleNav(evt));
     window.addEventListener('resize', evt => this.resizeNav(evt));
   };
+
   // toggle nav when the button is pressen, toggle off if pressed again.
   toggleNav () {
     if (this._navBar.style.display === 'none') {
@@ -20,6 +21,7 @@ export class Button {
       this._navBar.style.display = 'none';
     }
   }
+  
   // if window gets smaller than 768 -> hide our nav
   resizeNav () {
     if (window.innerWidth < 768) {

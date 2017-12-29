@@ -1,0 +1,37 @@
+{{!-- pages/projects.hbs --}}
+
+{{#> layouts/base title="Profile" pathToRoot="./" }}
+
+{{#* inline "head-block"}}        
+  <div class="containerQuote">
+    <h1 id="welcomeUser"></h1>
+  </div> 
+{{/inline}}
+
+ {{#*inline "content-block"}}
+  <div class="container">
+    <div class="profileContainer">
+      <div class="pageBtn">
+        <div class="logoutBtn">
+          <a href="index.html">Logout</a>
+        </div>
+      </div>
+      <div class="sectionDescription">
+        <h2 class="no-span">overview following students</h2>
+      </div>
+      <div class="sectionDescription">
+        <h2 class="no-span">overview favourite projects</h2>
+      </div>
+      <div class="sectionDescription">
+        <h2 class="no-span">overview liked projects</h2>
+      </div>
+    </div>
+  </div>
+ {{/inline}}
+
+
+{{#*inline scripts-block}}
+      {{!-- Custom scripts per pag.e --}}
+{{/inline}}
+
+{{/layouts/base}}

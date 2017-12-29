@@ -13,80 +13,77 @@ export class PageIndex {
     this._blogPostsContainer = document.querySelector('.blogPostsContainer');
     this._articlesContainer = document.querySelector('.articlesContainer');
 
-        if (document.title == "Home | New Media Development | Artevelde University College Ghent"){
-            this.pageIndexJson();
-        } else {
-            console.log("not yet");
-        }
+      if (document.title == "Home | New Media Development | Artevelde University College Ghent"){
+          this.pageIndexJson();
+      } 
     }
 
     pageIndexJson () {
-        let tempStrProjects = '';
-        let tempStrArticles = '';
-        let tempStrPosts = '';
+      let tempStrProjects = '';
+      let tempStrArticles = '';
+      let tempStrPosts = '';
 
-        for (var i = 0; i < 4; i++){
-            if(projects[i].projectId % 2 == 0){
-        tempStrProjects +=`
+      for (var i = 0; i < 4; i++){
+        if(projects[i].projectId % 2 == 0){
+          tempStrProjects +=`
             <div class="project ${projects[i].projectId} Left">
-            <div>
-              <div class="textHover">
+              <div>
+                <div class="textHover">
+                </div>
+                <div>
+                <img class="imgProject" src="../assets/images/projects/${projects[i].imgProject[0]}">
+                </div>
               </div>
               <div>
-              <img class="imgProject" src="../assets/images/projects/${projects[i].imgProject[0]}">
-              </div>
-            </div>
-            <div>
-              <div class="nameStudent">
+                <div class="nameStudent">
                 ${projects[i].nameStudent}
+                </div>
+                <div class="nameProject">            
+                <a href="detailPageProjects.html"><h2>${projects[i].nameProject}</h2></a>
+                </div>
               </div>
-              <div class="nameProject">            
-                <h2>${projects[i].nameProject}</h2>
-              </div>
-            </div>
-          </div>`;
+            </div>`;
         } else {
           tempStrProjects +=`
-          <div class="project ${projects[i].projectId} Right">
-            <div>
-              <div class="textHover">
+            <div class="project ${projects[i].projectId} Right">
+              <div>
+                <div class="textHover">
+                </div>
+                <div>
+                <img class="imgProject" src="../assets/images/projects/${projects[i].imgProject[0]}">
+                </div>
               </div>
               <div>
-              <img class="imgProject" src="../assets/images/projects/${projects[i].imgProject[0]}">
+                <div class="nameStudent">
+                  ${projects[i].nameStudent}
+                </div>
+                <div class="nameProject">            
+                <a href="detailPageProjects.html"><h2>${projects[i].nameProject}</h2></a>
+                </div>
               </div>
-            </div>
-            <div>
-              <div class="nameStudent">
-                ${projects[i].nameStudent}
-              </div>
-              <div class="nameProject">            
-                <h2>${projects[i].nameProject}</h2>
-              </div>
-            </div>
-          </div>`;
+            </div>`;
+          }
         }
-    }
-    console.log(tempStrProjects);
+        console.log(tempStrProjects);
         this._projectsContainer.innerHTML = tempStrProjects;
 
-        for (var i = 0; i < 3; i++)
-        { 
+        for (var i = 0; i < 3; i++){ 
           if(articles[i].articleId % 2 == 0){
               tempStrArticles += `  
-              <div class="articleDetailContainer">
-                <img  class="imgArticle Left" src="../assets/images/articles/${articles[i].articleImage}">
-                <div class="textArticle Right">
-                  <p>${articles[i].articleTitle}</p>
-                  <p class="articleThumb">${articles[i].articleThumbText}</p>
-                  <p>${articles[i].articleDate}</p>
-                </div>
-              </div>`;
+                <div class="articleDetailContainer">
+                  <img  class="imgArticle Left" src="../assets/images/articles/${articles[i].articleImage}">
+                  <div class="textArticle Right">
+                    <p><a href="detailPageArticles.html">${articles[i].articleTitle}</a></p>
+                    <p class="articleThumb">${articles[i].articleThumbText}</p>
+                    <p>${articles[i].articleDate}</p>
+                  </div>
+                </div>`;
               console.log(articles[i].articleId);
-            } else {
-              tempStrArticles += `  
+          } else {
+            tempStrArticles += `  
               <div class="articleDetailContainer">
                 <div class="textArticle Left">
-                  <p>${articles[i].articleTitle}</p>
+                  <p><a href="detailPageArticles.html">${articles[i].articleTitle}</a></p>
                   <p class="articleThumb">${articles[i].articleThumbText}</p>
                   <p>${articles[i].articleDate}</p>
                 </div>

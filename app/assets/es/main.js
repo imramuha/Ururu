@@ -3,7 +3,7 @@
 
 import { Person, Student, Project, Post } from './models';
 import { Button } from './buttons';
-import { Login, Register } from './login';
+import { Login, Register, log } from './login';
 import { GridOverlayElement } from './grid';
 import { Projects } from './projects';
 import { PageIndex } from './pageIndex';
@@ -125,7 +125,7 @@ class App {
                 ${projects[i].nameStudent}
               </div>
               <div class="nameProject">            
-                <h2>${projects[i].nameProject}</h2>
+              <a href="detailPageProjects.html"><h2>${projects[i].nameProject}</h2></a>
               </div>
             </div>
           </div>`;
@@ -144,7 +144,7 @@ class App {
                 ${projects[i].nameStudent}
               </div>
               <div class="nameProject">            
-                <h2>${projects[i].nameProject}</h2>
+              <a href="detailPageProjects.html"><h2>${projects[i].nameProject}</h2></a>
               </div>
             </div>
           </div>`;
@@ -176,7 +176,7 @@ class App {
         <div class="articleDetailContainer">
           <img  class="imgArticle Left" src="../assets/images/articles/${articles[i].articleImage}">
           <div class="textArticle Right">
-            <p>${articles[i].articleTitle}</p>
+            <p><a href="detailPageArticles.html">${articles[i].articleTitle}</a></p>
             <p class="articleThumb">${articles[i].articleThumbText}</p>
             <p>${articles[i].articleDate}</p>
           </div>
@@ -186,7 +186,7 @@ class App {
         tempStr += `  
         <div class="articleDetailContainer">
           <div class="textArticle Left">
-            <p>${articles[i].articleTitle}</p>
+            <p><a href="detailPageArticles.html">${articles[i].articleTitle}</a></p>
             <p class="articleThumb">${articles[i].articleThumbText}</p>
             <p>${articles[i].articleDate}</p>
           </div>
@@ -231,18 +231,20 @@ class App {
 
     console.log('Initialization of the class App');
 
-    const ps1 = new Person('Philippe', 'De Pauw - Waterschoot');
+    /* const ps1 = new Person('Philippe', 'De Pauw - Waterschoot');
     console.log(ps1.toString());
 
     const st1 = new Student('362453', 'philippe.depauw@arteveldehs.be', 'Philippe', 'De Pauw - Waterschoot');
     console.log(st1.toString());
-
+    */
+    // instances of our classes
     let toggleButton = new Button();
     let userRegister = new Register();
-    //let userLogin = new Login();
+    userRegister.loggedIn();
     let propro = new Projects();
     let indexPage = new PageIndex();
     let detailPage = new DetailPages();
+
   }
 };
 

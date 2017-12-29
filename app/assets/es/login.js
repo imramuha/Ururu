@@ -10,54 +10,114 @@ export class Register {
     this._usernameLogin = document.querySelector('.inputLoginUsername');
     this._passwordLogin = document.querySelector('.inputLoginPassword');
     this._loginBtn = document.querySelector('.signInButton');
+    this._logoutBtn = document.querySelector('.logoutBtn');
 
-    this._loginStatus = false;
+    // logged in
+    this._profileBtn = document.getElementById('profile');
+    this._welcomeUser = document.getElementById('welcomeUser');
 
-    if (this._loginBtn) {
-      this._loginBtn.addEventListener('click', evt => this.login(evt));
-    }
-    // localStorage.setItem('users', JSON.stringify("Admin"));
-    // console.log(this._oldUsers);
-    
-    // eventlistener added
+    // eventlisteners
+    // for registerBtn
     if (this._registerBtn) {
     this._registerBtn.addEventListener('click', evt => this.register(evt));
     }
+    // for loginBtn
+    if (this._loginBtn) {
+      this._loginBtn.addEventListener('click', evt => this.login(evt));
+    }
+    // for logoutBtn
+    if (this._logoutBtn) {
+      this._logoutBtn.addEventListener('click', evt => this.logout(evt));
+    }
+
+    // checks if someone is logged in, based on the status the user gets more privileges.
+    this.loggedIn();                                                                   
   };
 
   // func to register a user
   register() {
- 
     // gets the users that are currently saved in the localstorage
-    this._oldUsers = JSON.parse(localStorage.getItem('users'));
+    this._oldUsers = JSON.parse(localStorage.getItem('users'));                     
 
+    // a date, will be used to create a random id number
+    let date = new Date();                                                             
     // creates new object made of user input
-    let _user = [{'user': this._username.value, 'pass': this._password.value}];
+    let _user = [{                                                                     
+      'id': date.getTime() + Math.round(Math.random() * date.getTime()),               // creates a random id number
+      'user': this._username.value,
+      'pass': this._password.value
+    }];        
     
-    // pushes the new array to the old one -> the one we retrieved earlier from our local storage
-    _user.push(...this._oldUsers);
+     // pushes the new array to the old one -> the one we retrieved earlier from our local storage
+    _user.push(...this._oldUsers);                                                    
     console.log(_user);
 
     // and save is in the local storage again
-    localStorage.setItem('users', JSON.stringify(_user));
+    localStorage.setItem('users', JSON.stringify(_user));           
   }
 
   login () {
+
     let _allUsers = JSON.parse(localStorage.getItem('users'));
     let _usernameLogin = this._usernameLogin.value;
     let _passwordLogin = this._passwordLogin.value;
-    let _loginStatus = this._loginStatus;
 
-    _allUsers.forEach(function (value, i) {
-      if (_usernameLogin === value.user && _passwordLogin === value.pass){
-        console.log('correct user');
-        _loginStatus = true;
-        console.log('user: ', value.user, 'is logged in');
-      } else {
-        console.log('wrong username or password');
+      // foreach login object, we check if our userinput matches any of the existing objects
+      _allUsers.forEach(function(value, i){ 
+        if (_usernameLogin === value.user && _passwordLogin === value.pass){
+          // console.log('correct user');
+
+          //create a key loginStatus with the value of true if the user has logged in
+          let _loginStatus = true;
+          localStorage.setItem('loginStatus', JSON.stringify(_loginStatus));
+
+          // gets the name of the logged in user
+          let _loggedInUser = value.user;
+          localStorage.setItem('loggedInUser', JSON.stringify(_loggedInUser));
+
+          // if someone already logged in loop this
+        } else if (JSON.parse(localStorage.getItem('loginStatus')) == true) {
+          console.log("User is logged in.");
+
+        } else {
+
+          //create a key loginStatus with the value of true if the user has logged in
+          let _loginStatus = false;
+          localStorage.setItem('loginStatus', JSON.stringify(_loginStatus));
+          console.log('wrong username or password');
+
+        }
+      })
+
+  }
+
+  loggedIn () {
+    console.log("logged in function");
+    if (JSON.parse(localStorage.getItem('loginStatus')) === true) {
+      if (document.title == "Profile"){
+        let loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
+        console.log(this._welcomeUser)
+        this._welcomeUser.innerHTML = 'Have a nice day ' + loggedInUser + '.';
+        console.log('hiyoo');
+        console.log(this._welcomeUser)
+
       }
-    });
-    console.log(this._loginStatus);
-    console.log(_loginStatus);
+
+      // change its href attribute
+      this._profileBtn.href = "profile.html";
+      // change from login to profile
+      this._profileBtn.innerHTML = "Profile";
+      console.log("You're logged in :).")
+    }     
+  }
+
+  logout () {
+    if (JSON.parse(localStorage.getItem('loginStatus')) === true){
+      console.log('hioo');
+    let _logout = false;
+    localStorage.setItem('loginStatus', JSON.stringify(_logout));
+    } else {
+      console.log('hi');
+    }
   }
 }

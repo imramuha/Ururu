@@ -88,6 +88,21 @@
 .fa {
   @include icon-hover-color(#2e4b51, $headings-font-size);
 }
+
 .container {
   @include containers();
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.logoutBtn {
+  width: 100%;
+  margin-bottom: 50px;
+  font-family: $headings-font-family;
+
+  @include boxShadow();
+  @include createRoundButton(100%, $nightblue, $snowwhite);
 }
