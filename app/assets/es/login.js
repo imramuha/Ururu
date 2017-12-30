@@ -36,11 +36,13 @@ export class Register {
 
   // func to register a user
   register () {
+    let _registerButton = this._registerBtn;
     // gets the users that are currently saved in the localstorage
     this._oldUsers = JSON.parse(localStorage.getItem('users'));
 
     // a date, will be used to create a random id number
     let date = new Date();
+
     // creates new object made of user input
     let _user = [{
       // creates a random id number
@@ -55,6 +57,7 @@ export class Register {
 
     // and save is in the local storage again
     localStorage.setItem('users', JSON.stringify(_user));
+    _registerButton.href = 'login.html';
   }
 
   login () {
@@ -62,6 +65,7 @@ export class Register {
     let _allUsers = JSON.parse(localStorage.getItem('users'));
     let _usernameLogin = this._usernameLogin.value;
     let _passwordLogin = this._passwordLogin.value;
+    let _loginButton = this._loginBtn;
 
     // foreach login object, we check if our userinput matches any of the existing objects
     _allUsers.forEach(function (value, i) {
@@ -75,7 +79,9 @@ export class Register {
         // gets the name of the logged in user
         let _loggedInUser = value.user;
         localStorage.setItem('loggedInUser', JSON.stringify(_loggedInUser));
-
+        _loginOrNot.innerHTML = '<h2>You are logged in</h2>';
+        
+        _loginButton.href = 'login.html';
         // if someone already logged in loop this
       } else if (JSON.parse(localStorage.getItem('loginStatus')) == true) {
         // console.log('User is logged in.');
@@ -94,12 +100,11 @@ export class Register {
   loggedIn () {
     console.log('logged in function');
     if (JSON.parse(localStorage.getItem('loginStatus')) === true) {
-      if (document.title == 'Profile') {
+      if (document.title == 'Profile | Ururu | New Media Development | Artevelde University College Ghent') {
         let loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
         this._welcomeUser.innerHTML = 'Have a nice day ' + loggedInUser + '.';
         // console.log(this._welcomeUser);
       }
-
       // change its href attribute
       this._profileBtn.href = 'profile.html';
       // change from login to profile
@@ -110,7 +115,7 @@ export class Register {
 
   logout () {
     if (JSON.parse(localStorage.getItem('loginStatus')) === true) {
-      console.log('hioo');
+      //console.log('hioo');
       let _logout = false;
       localStorage.setItem('loginStatus', JSON.stringify(_logout));
     } else {

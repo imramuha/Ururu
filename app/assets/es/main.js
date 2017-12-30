@@ -49,7 +49,7 @@ class App {
 
   // voor google maps
   initMap () {
-    if (document.title === 'Contact') {
+    if (document.title === 'Contact | Ururu | New Media Development | Artevelde University College Ghent') {
       let uluru = {lat: 51.0673017, lng: 3.7004048};
       let map = new google.maps.Map(document.querySelector('.map'), {
         zoom: 16,
@@ -65,13 +65,13 @@ class App {
   init () {
     console.log('Initialization of the class App');
 
+    let useNavigo = new UseNavigo();
     // instances of our classes
     let toggleButton = new Button();
     // make sure the nav stays none if the screen is < 768 unless the pullnav is pressed.
     toggleButton.resizeNav();
     let userRegister = new Register();
     userRegister.loggedIn();
-    let useNavigo = new UseNavigo();
   }
 };
 

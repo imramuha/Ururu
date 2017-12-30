@@ -14,6 +14,19 @@ export class UseNavigo {
     this._router = new Navigo(this._root, this._useHash, this._hash);
 
     this.navigo();
+    this.favProject();
+  }
+
+  favProject () {
+    let loadJson = new LoadJson;
+    this._getProject = document.querySelector('.favorite');
+        if (this._getProject) {
+        this._getProject.addEventListener('click', evt => loadJson.favoriteProject(evt));
+    }
+    this._getProject = document.querySelector('.like');
+        if (this._getProject) {
+        this._getProject.addEventListener('click', evt => loadJson.likeProject(evt));
+    }
   }
 
   navigo () {

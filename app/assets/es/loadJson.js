@@ -12,11 +12,15 @@ export class LoadJson {
     this._aboutUsContainer = document.querySelector('.aboutUsContainer');
     this._blogPostsContainer = document.querySelector('.blogPostsContainer');
     this._articlesContainer = document.querySelector('.articlesContainer');
-
-    // chaching dom elements
     this._projectContainer = document.querySelector('.projectContainer');
     this._articleContainer = document.querySelector('.articleContainer');
     this._containerQuote = document.querySelector('.containerQuote');
+
+    // shows all the liked/favorited projects when the profile page is visited
+    if (document.title == 'Profile | Ururu | New Media Development | Artevelde University College Ghent') {
+      this.favoriteProject ();
+    this.likeProject ();
+    }
   }
 
   loadProjectsJson () {
@@ -243,8 +247,8 @@ export class LoadJson {
         </div> 
         <div class="nameProjectDetail">           
           <h4>${projects[i].nameProject}</h4>
-          <i class="fa fa-heart left foot" aria-hidden="true"></i> 
-          <i class="fa fa-thumbs-up left foot" aria-hidden="true"></i>  
+          <a class="favorite" ><i class="fa fa-heart left foot" aria-hidden="true"></i></a>
+          <a class="like"><i class="fa fa-thumbs-up left foot" aria-hidden="true"></i></a>  
           <i class="fa fa-eye left foot" aria-hidden="true"></i>  
         </div>
       </div>
@@ -272,6 +276,50 @@ export class LoadJson {
     this._projectContainer.innerHTML = tempStr;
     this._containerQuote.innerHTML = tempStrTitle;
   }
+
+  favoriteProject () {
+     // favorite a project
+     // checks if the user is logged in
+     if (JSON.parse(localStorage.getItem('loginStatus')) === true) {   
+      // if detailprojectpage is open and someone clicks on the heart, save that project to the localstorage
+      if (document.title == 'Project | Ururu | New Media Development | Artevelde University College Ghent') {
+        localStorage.setItem('favoriteProject', JSON.stringify(this._projectContainer.innerHTML));
+      }
+      // if profile is open, show the pages that are currently favorited
+      if (document.title == 'Profile | Ururu | New Media Development | Artevelde University College Ghent') {
+        let _favoriteProjectsContainer = document.querySelector('.favoriteProjectsContainer');
+
+
+        let _favoritedProjects = JSON.parse(localStorage.getItem('favoriteProject'));
+        _favoriteProjectsContainer.innerHTML = _favoritedProjects;
+      }
+
+    } else {
+      console.log("You should login before you try to favorite or like something.")  
+    }
+  }
+
+  likeProject () {
+    // favorite a project
+     // checks if the user is logged in
+     if (JSON.parse(localStorage.getItem('loginStatus')) === true) {   
+      // if detailprojectpage is open and someone clicks on the thumbs, save that project to the localstorage
+      if (document.title == 'Project | Ururu | New Media Development | Artevelde University College Ghent') {
+        localStorage.setItem('likeProject', JSON.stringify(this._projectContainer.innerHTML));
+      }
+      // if profile is open, show the pages that are currently favorited
+      if (document.title == 'Profile | Ururu | New Media Development | Artevelde University College Ghent') {
+        let _likeProjectsContainer = document.querySelector('.likeProjectsContainer');
+        console.log('nyooo')
+
+        let _likedProjects = JSON.parse(localStorage.getItem('likeProject'));
+        _likeProjectsContainer.innerHTML = _likedProjects;
+      }
+
+    } else {
+      console.log("You should login before you try to favorite or like something.")  
+    }
+ }
 
   loadDetailArticle () {
     let tempStr = '';
