@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 export class Button {
   constructor () {
@@ -21,14 +21,13 @@ export class Button {
       this._navBar.style.display = 'none';
     }
   }
-  
+
   // if window gets smaller than 768 -> hide our nav
   resizeNav () {
     if (window.innerWidth < 768) {
       this._navBar.style.display = 'none';
       // console.log('check~');
-
-    } else {
+    } else if (window.innerWidth >= 768) {
       this._navBar.style.display = 'block';
     }
   }

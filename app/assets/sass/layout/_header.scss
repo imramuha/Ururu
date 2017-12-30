@@ -23,14 +23,16 @@
 .containerNav {
   @include makeOuterContainer($snowwhite, $nightblue, 85%, 85%);
   @include boxShadow();
+
   height: 48px;
 
-  @include respond-to ('large'){
-      height: 53px;
+  @include respond-to ('large') {
+    height: 53px;
   }
-  @include respond-to ('huge'){
+
+  @include respond-to ('huge') {
     height: 61px;
-}
+  }
 }
 
 .navigation {
@@ -77,13 +79,13 @@ a.left.nav,
 
 @include respond-to('mediumx') {
   .navigation {
-    padding: 0px;
+    padding: 0;
   }
 
   nav a#pullNav {
     text-align: left;
     display: inline-block;
-  
+
     @include drawALine($snowwhite, $nightblue);
   }
 
@@ -117,15 +119,10 @@ a.left.nav,
 
   .containerNav {
     @include makeOuterContainer($nightblue, $nightblue, 50%, 50%);
+
     height: 41px;
   }
 }
-
-// TESTING SPACE
-@include respond-to (medium){
-  
-}
-//
 
 // HEADER QUOTE
 .footerWhiteSpace {

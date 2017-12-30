@@ -1,9 +1,9 @@
-.articleDetailContainer { 
-    overflow:hidden;
-    width: 100%;
-    margin: 35px auto;
-    display: flex;
-    align-items: center;
+.articleDetailContainer {
+  overflow: hidden;
+  width: 100%;
+  margin: 35px auto;
+  display: flex;
+  align-items: center;
 }
 
 .textArticle {
@@ -43,6 +43,7 @@
   .imgArticle {
     height: 210px;
   }
+
   .textArticle {
     min-height: 193px;
   }
@@ -52,6 +53,7 @@
   .imgArticle {
     height: 279px;
   }
+
   .textArticle {
     min-height: 263px;
   }
@@ -61,6 +63,7 @@
   .imgArticle {
     height: 300px;
   }
+
   .textArticle {
     min-height: 273px;
     padding: 0 30px;

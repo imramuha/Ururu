@@ -29,6 +29,7 @@
     @include drawImage (auto);
   }
 }
+
 @include respond-to('medium') {
   .imgProject {
     @include drawImage (285px);
@@ -36,8 +37,8 @@
 
   .project {
     @include drawProject (45%, auto);
-  
-    display:inline-block;
+
+    display: inline-block;
   }
 
   .project.Left {
@@ -54,6 +55,7 @@
     @include drawImage (360px);
   }
 }
+
 @include respond-to('huge') {
   .imgProject {
     @include drawImage (600px);
@@ -63,6 +65,3 @@
     @include drawHoverText(50%);
   }
 }
-
-  
-
