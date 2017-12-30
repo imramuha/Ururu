@@ -103,121 +103,7 @@ class App {
 
   // loading jsong data for projects/news and abous us pages
   loadData () {
-    /*let tempStr = '';
-
-    // the projects
-    if (document.title== "Projects") {
-      projects.forEach(function (value, i) {
-        if(projects[i].projectId % 2 == 0)
-        {
-          tempStr +=`
-            <div class="project ${projects[i].projectId} Left">
-            <div>
-              <div class="textHover">
-              </div>
-              <div>
-              <img class="imgProject" src="../assets/images/projects/${projects[i].imgProject[0]}">
-              </div>
-            </div>
-            <div>
-              <div class="nameStudent">
-                ${projects[i].nameStudent}
-              </div>
-              <div class="nameProject">            
-              <a href="detailPageProjects.html"><h2>${projects[i].nameProject}</h2></a>
-              </div>
-            </div>
-          </div>`;
-        } else {
-          tempStr +=`
-          <div class="project ${projects[i].projectId} Right">
-            <div>
-              <div class="textHover">
-              </div>
-              <div>
-              <img class="imgProject" src="../assets/images/projects/${projects[i].imgProject[0]}">
-              </div>
-            </div>
-            <div>
-              <div class="nameStudent">
-                ${projects[i].nameStudent}
-              </div>
-              <div class="nameProject">            
-              <a href="detailPageProjects.html"><h2>${projects[i].nameProject}</h2></a>
-              </div>
-            </div>
-          </div>`;
-        }
-        console.log(value);
-      })
-      console.log(tempStr);
-    this._projectsContainer.innerHTML = tempStr;
-
-
-    // about us
-    } else if (document.title == "About us"){
-      courses.forEach(function (value, i) {
-        tempStr += `  
-          <h2>${courses[i].courseTitle}</h2>
-          <article>${courses[i].courseContent}</article>`;
-        console.log(value);
-    })
-   
-      this._aboutUsContainer.innerHTML = tempStr;
     
-
-     // the articles/news
-  } else if (document.title == "News"){
-    articles.forEach(function (value, i) {
-      if(articles[i].articleId % 2 == 0)
-      {
-        tempStr += `  
-        <div class="articleDetailContainer">
-          <img  class="imgArticle Left" src="../assets/images/articles/${articles[i].articleImage}">
-          <div class="textArticle Right">
-            <p><a href="detailPageArticles.html">${articles[i].articleTitle}</a></p>
-            <p class="articleThumb">${articles[i].articleThumbText}</p>
-            <p>${articles[i].articleDate}</p>
-          </div>
-        </div>`;
-        console.log(articles[i].articleId);
-      } else {
-        tempStr += `  
-        <div class="articleDetailContainer">
-          <div class="textArticle Left">
-            <p><a href="detailPageArticles.html">${articles[i].articleTitle}</a></p>
-            <p class="articleThumb">${articles[i].articleThumbText}</p>
-            <p>${articles[i].articleDate}</p>
-          </div>
-          <img  class="imgArticle Right" src="../assets/images/articles/${articles[i].articleImage}">
-        </div>`;        
-      }
-      console.log(value);
-    })
-    this._articlesContainer.innerHTML = tempStr;
-
-
-    // the courses
-
-      // the blog
-    } else if (document.title == "Blog") {
-      posts.forEach(function (value, i) {
-        tempStr += `
-          <div class="blogPost">
-          <div class="overlay"><img src="../assets/images/${posts[i].postImg[0]}" alt="blurred photo about topic of the blogpost"></div>
-          <div class="box above">
-          <img src="../assets/images/${posts[i].postImg[1]}" alt="Creater of the blogpost">
-            <h3>${posts[i].postCreator}</h3>
-            <p>${posts[i].postCreatorNature}</p>
-          </div>
-          <div class="box below">
-            <h4>${posts[i].postTitle}</h4>
-          </div>
-        </div>`;
-        console.log(value);
-      })
-      this._blogPostsContainer.innerHTML = tempStr;
-    }*/
 
  
 }
@@ -234,7 +120,7 @@ class App {
     let toggleButton = new Button();
     let userRegister = new Register();
     userRegister.loggedIn();
-    let detailPage = new DetailPages();
+    //let detailPage = new DetailPages();
     let useNavigo = new UseNavigo();
 
   }

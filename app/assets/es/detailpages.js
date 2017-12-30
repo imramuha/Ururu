@@ -1,4 +1,4 @@
-'use strict'
+'use strict'/*
 
 import { projects } from '../../_hb/data/projects.json'
 import { articles } from '../../_hb/data/articles.json'
@@ -7,8 +7,6 @@ export class DetailPages {
   constructor () {
     // chaching dom elements 
     this._projectContainer = document.querySelector('.projectContainer');
-    // this._aboutUsContainer = document.querySelector('.aboutUsContainer');
-    // this._blogPostsContainer = document.querySelector('.blogPostsContainer');
     this._articleContainer = document.querySelector('.articleContainer');
     this._containerQuote = document.querySelector('.containerQuote');
 
@@ -105,4 +103,4 @@ export class DetailPages {
     this._containerQuote.innerHTML = tempStrTitle; 
     this._articleContainer.innerHTML = tempStr;
   }
-}
+}*/

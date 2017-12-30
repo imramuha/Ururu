@@ -1,6 +1,5 @@
 'use strict'
 
-import { PageIndex } from './pageIndex';
 import { LoadJson } from './loadjson';
 
 import navigo from 'navigo';
@@ -30,7 +29,7 @@ export class UseNavigo {
   
   navigo () {
     let loadJson = new LoadJson();
-    let loadJsonIndex = new PageIndex();
+
 
     this._router.on({
       'localhost:8080/': function () {
@@ -47,22 +46,35 @@ export class UseNavigo {
       },
       'aboutus.html': function () {
 
-        // loading the projects
+        // loading the aboutus
         loadJson.loadAboutUsJson();
         console.log('this is aboutus page.');
       }, 
       'news.html': function () {
 
-        // loading the projects
+        // loading the articles
         loadJson.loadNewsJson();
         console.log('this is news page.');
       },
       'blog.html': function () {
 
-        // loading the projects
+        // loading the blog
         loadJson.loadBlogJson();
         console.log('this is blog page.');
+      },
+      'detailpageproject.html': function () {
+
+        // loading the detailpage for projects
+        loadJson.loadDetailProject();
+        console.log('this detailpageProjects page.');
       }, 
+      'detailpagearticles.html': function () {
+
+        console.log('hi');
+        // loading the detailpage for articles
+        loadJson.loadDetailArticle();
+        console.log('this is detailArticles page.');
+      },  
     }).resolve(); 
   }
 }
