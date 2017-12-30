@@ -62,6 +62,6 @@
   }
 
   .textHover {
-    @include drawHoverText(50%);
+    //@include drawHoverText(50%);
   }
 }

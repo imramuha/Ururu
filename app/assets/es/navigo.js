@@ -65,13 +65,13 @@ export class UseNavigo {
         console.log('this is blog page.');
       },
 
-      'detailPageProject.html': function () {
+      'detailpageproject.html': function () {
         // loading the detailpage for projects
         loadJson.loadDetailProject();
         console.log('this detailpageProjects page.');
       },
 
-      'detailPageArticle.html': function () {
+      'detailpagearticle.html': function () {
 
         // loading the detailpage for articles
         loadJson.loadDetailArticle();

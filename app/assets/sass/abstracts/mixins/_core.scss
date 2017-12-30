@@ -67,7 +67,7 @@
   width: $width;
   height: $height;
 }
-
+/*
 // when hovered over the project show a textbox/div
 @mixin drawHoverText($height) {
   // try out if and else -> when $right -> use other else use the right ones?
@@ -84,7 +84,7 @@
     opacity: 1;
     transition: opacity 1.5s;
   }
-}
+} */
 
 // draw a line under things I want
 @mixin drawALine($color, $backgroundColor) {

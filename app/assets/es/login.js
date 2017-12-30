@@ -81,7 +81,7 @@ export class Register {
         localStorage.setItem('loggedInUser', JSON.stringify(_loggedInUser));
         _loginOrNot.innerHTML = '<h2>You are logged in</h2>';
         
-        _loginButton.href = 'login.html';
+       // _loginButton.href = 'login.html';
         // if someone already logged in loop this
       } else if (JSON.parse(localStorage.getItem('loginStatus')) == true) {
         // console.log('User is logged in.');
