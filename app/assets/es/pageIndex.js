@@ -13,9 +13,9 @@ export class PageIndex {
     this._blogPostsContainer = document.querySelector('.blogPostsContainer');
     this._articlesContainer = document.querySelector('.articlesContainer');
 
-      if (document.title == "Home | New Media Development | Artevelde University College Ghent"){
+      /*if (document.title == "Home | New Media Development | Artevelde University College Ghent"){
           this.pageIndexJson();
-      } 
+      } */
     }
 
     pageIndexJson () {

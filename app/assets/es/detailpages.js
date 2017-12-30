@@ -1,8 +1,6 @@
 'use strict'
 
 import { projects } from '../../_hb/data/projects.json'
-// import { courses } from '../../_hb/data/aboutus.json'
-// import { posts } from '../../_hb/data/blogposts.json'
 import { articles } from '../../_hb/data/articles.json'
 
 export class DetailPages {

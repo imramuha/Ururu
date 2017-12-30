@@ -1,9 +1,5 @@
 
 // LOGIN~~
-.pageBtn {
-  margin: 20px 25px;
-}
-
 .loginForm h2 {
   margin: 25px 0 5px 15px;
 }
@@ -34,6 +30,8 @@
 .registerBtn a {
   @include boxShadow();
   @include createRoundButton(100%, $nightblue, $snowwhite);
+  border-radius: 0;
+  margin: 20px 0;
 }
 
 .loginPageBtn a,
@@ -53,7 +51,6 @@
   color: $nightblue;
   font-family: $base-font-family;
   font-size: #{$base-font-size}pt;
-  border-radius: 100px;
 
   @include boxShadow();
 }

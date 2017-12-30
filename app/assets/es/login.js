@@ -12,6 +12,7 @@ export class Register {
     this._loginBtn = document.querySelector('.signInButton');
     this._logoutBtn = document.querySelector('.logoutBtn');
 
+
     // logged in
     this._profileBtn = document.getElementById('profile');
     this._welcomeUser = document.getElementById('welcomeUser');
@@ -57,7 +58,7 @@ export class Register {
   }
 
   login () {
-
+    let _loginOrNot = document.querySelector('.loginOrNot');
     let _allUsers = JSON.parse(localStorage.getItem('users'));
     let _usernameLogin = this._usernameLogin.value;
     let _passwordLogin = this._passwordLogin.value;
@@ -80,7 +81,8 @@ export class Register {
           console.log("User is logged in.");
 
         } else {
-
+          console.log(_loginOrNot);
+          _loginOrNot.innerHTML = '<h2>Wrong username or password.<br> Please try again.</h2>';
           //create a key loginStatus with the value of true if the user has logged in
           let _loginStatus = false;
           localStorage.setItem('loginStatus', JSON.stringify(_loginStatus));

@@ -1,13 +1,12 @@
 'use strict';
-'use strict';
 
 import { Person, Student, Project, Post } from './models';
 import { Button } from './buttons';
 import { Login, Register, log } from './login';
 import { GridOverlayElement } from './grid';
-import { Projects } from './projects';
 import { PageIndex } from './pageIndex';
 import { DetailPages } from './detailpages';
+import { UseNavigo } from './navigo';
 
 // importing all json files
 import { projects } from '../../_hb/data/projects.json'
@@ -104,7 +103,7 @@ class App {
 
   // loading jsong data for projects/news and abous us pages
   loadData () {
-    let tempStr = '';
+    /*let tempStr = '';
 
     // the projects
     if (document.title== "Projects") {
@@ -218,7 +217,7 @@ class App {
         console.log(value);
       })
       this._blogPostsContainer.innerHTML = tempStr;
-  }
+    }*/
 
  
 }
@@ -231,19 +230,12 @@ class App {
 
     console.log('Initialization of the class App');
 
-    /* const ps1 = new Person('Philippe', 'De Pauw - Waterschoot');
-    console.log(ps1.toString());
-
-    const st1 = new Student('362453', 'philippe.depauw@arteveldehs.be', 'Philippe', 'De Pauw - Waterschoot');
-    console.log(st1.toString());
-    */
     // instances of our classes
     let toggleButton = new Button();
     let userRegister = new Register();
     userRegister.loggedIn();
-    let propro = new Projects();
-    let indexPage = new PageIndex();
     let detailPage = new DetailPages();
+    let useNavigo = new UseNavigo();
 
   }
 };
