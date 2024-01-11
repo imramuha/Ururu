@@ -16,10 +16,33 @@ projecten van de studenten liken, aan favoriten toevoegen of zelfs delen via de 
 Gitlab: https://gitlab.com/imramuha/Ururu/
 Github pages: https://imramuha.github.io/app/
 
-> **TODO**
+Functioneel
+------------
+Bezoeker
+> - Gepagineerd overzicht van werkstukken
+> - Detail van een werkstuk
+> - Specialisaties van de opleiding
+> - Blog van de opleiding
+> - Detail van een artikel
+> - Contacteren van de opleiding
+> - Social media van de opleiding
+> - Registreren
+Geregistreerde gebruiker (na inloggen)
+> - Liken, toevoegen aan favorieten van werkstukken
+> - Delen via social media
 
-> - redirect to profile page after signing in
-> - logged in user can follow students
-> - logged in user can like projects
+Technisch
+----------
+> - NPM
+> - ES6
+> - Sass
+> - Gulp
+Routing engines
+> - Navigo
+> - Handlebars
+> - Handlebars layouts
+
+> **TODO**
+> - views, studenten volgen
 > - add parameters to register form
 > - sharebuttons for social medias

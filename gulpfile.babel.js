@@ -1,8 +1,6 @@
 /*
  Automation Project
  =====================================================================================
- Specialization: New Media Development
- Author : Philippe De Pauw - Waterschoot
  Version: 1.0.0
 */
 
@@ -12,19 +10,32 @@
  Libraries
  =====================================================================================
 */
-import browserSync from 'browser-sync';
-import del from 'del';
 import gulp from 'gulp';
 import gulpLoadPlugins from 'gulp-load-plugins';
 import webpack from 'webpack-stream';
-import path from 'path';
-import pkg from './package.json';
+import del from 'del';
 import runSequence from 'run-sequence';
 import sassdoc from 'sassdoc';
+import browserSyncModule from 'browser-sync';
 
-const $ = gulpLoadPlugins();
+const $ = gulpLoadPlugins({
+  pattern: ['postcss-*', 'gulp-*'],
+  replaceString: /^(postcss|gulp)-/,
+  lazy: true,
+  rename: {
+    'gulp-if': 'if',
+  },
+});
+
+const browserSync = browserSyncModule.create();
 const reload = browserSync.reload;
-const devMode = true;
+
+// Override the autoprefixer loaded by gulp-load-plugins with a dynamic import
+$.postcss = () => [import('autoprefixer')()];
+
+const sass = require('gulp-sass')(require('sass')); // Explicitly set Sass compiler
+
+
 
 /*
  HTML
@@ -35,10 +46,7 @@ const devMode = true;
 gulp.task('html', () => {
   return gulp.src('app/**/*.html')
     .pipe($.plumberNotifier())
-    .pipe($.useref({
-      searchPath: '{.tmp,app}',
-      noAssets: true
-    }))
+    .pipe($.useref({ searchPath: '{.tmp,app}', noAssets: true }))
     .pipe($.if('*.html', $.htmlmin({
       removeComments: true,
       collapseWhitespace: true,
@@ -50,8 +58,9 @@ gulp.task('html', () => {
       removeStyleLinkTypeAttributes: true,
       removeOptionalTags: true
     })))
-    .pipe($.if('*.html', $.size({title: 'html', showFiles: true})))
-    .pipe(gulp.dest('dist'));
+    .pipe($.if('*.html', $.size({ title: 'html', showFiles: true })))
+    .pipe(gulp.dest('dist'))
+    .pipe(reload({ stream: true }));
 });
 
 /*
@@ -60,16 +69,13 @@ gulp.task('html', () => {
  Compile Handlebars Pages to HTML
 */
 gulp.task('handlebars:compile', () => {
-  gulp
-    .src('app/_hb/pages/**/*.hbs')
+  return gulp.src('app/_hb/pages/**/*.hbs')
     .pipe($.hb({
       partials: 'app/_hb/partials/**/*.hbs',
       helpers: 'app/_hb/helpers/*.js',
       data: 'app/_hb/data/**/*.{js,json}'
     }))
-    .pipe($.rename({
-      extname: '.html'
-    }))
+    .pipe($.rename({ extname: '.html' }))
     .pipe(gulp.dest('./app'));
 });
 
@@ -83,10 +89,10 @@ gulp.task('html:lint', () =>
     .pipe($.htmllint({}, htmllintReporter))
 );
 
-function htmllintReporter (filepath, issues) {
+function htmllintReporter(filepath, issues) {
   if (issues.length > 0) {
     issues.forEach(function (issue) {
-      $.gutil.log($.gutil.colors.cyan('[gulp-htmllint] ') + $.gutil.colors.white(filepath + ' [' + issue.line + ',' + issue.column + ']: ') + $.gutil.colors.red('(' + issue.code + ') ' + issue.msg));
+      $.util.log($.util.colors.cyan('[gulp-htmllint] ') + $.util.colors.white(filepath + ' [' + issue.line + ',' + issue.column + ']: ') + $.util.colors.red('(' + issue.code + ') ' + issue.msg));
     });
     process.exitCode = 1;
   }
@@ -98,9 +104,9 @@ function htmllintReporter (filepath, issues) {
  Transpile Sass to CSS
  Automatically prefix stylesheets
 */
-gulp.task('styles', () => {
+gulp.task('styles', async () => {
   const AUTOPREFIXER_BROWSERS = [
-    'ie >= 10', 
+    'ie >= 10',
     'ie_mob >= 10',
     'ff >= 30',
     'chrome >= 34',
@@ -111,26 +117,38 @@ gulp.task('styles', () => {
     'bb >= 10'
   ];
 
-  return gulp.src([
-    'app/assets/sass/*.scss',
-    'app/assets/css/**/*.css'
-  ])
-    .pipe($.plumberNotifier())
-    .pipe($.newer('.tmp/assets/css'))
-    .pipe($.sourcemaps.init())
-    .pipe($.sass({
-      outputStyle: 'expanded',
-      precision: 10,
-      includePaths: ['.']
-    }).on('error', $.sass.logError))
-    .pipe($.autoprefixer(AUTOPREFIXER_BROWSERS))
-    .pipe(gulp.dest('.tmp/assets/css'))
-    .pipe($.if('*.css', $.cssnano()))
-    .pipe($.size({title: 'styles'}))
-    .pipe($.sourcemaps.write('./'))
-    .pipe(gulp.dest('dist/assets/css'))
-    .pipe(gulp.dest('.tmp/assets/css'));
+  try {
+    await new Promise((resolve, reject) => {
+      gulp.src([
+        'app/assets/sass/*.scss',
+        'app/assets/css/**/*.css'
+      ])
+        .pipe($.plumberNotifier())
+        .pipe($.newer('.tmp/assets/css'))
+        .pipe($.sourcemaps.init())
+        .pipe(sass({
+          outputStyle: 'expanded',
+          precision: 10,
+          includePaths: ['.']
+        }).on('error', sass.logError))
+        .pipe($.postcss([import('autoprefixer')({ browsers: AUTOPREFIXER_BROWSERS })]))
+        .pipe(gulp.dest('.tmp/assets/css'))
+        .pipe($.if('*.css', $.cssnano()))
+        .pipe($.size({ title: 'styles' }))
+        .pipe($.sourcemaps.write('./'))
+        .pipe(gulp.dest('dist/assets/css'))
+        .pipe(gulp.dest('.tmp/assets/css'))
+        .pipe(reload({ stream: true }))
+        .on('end', resolve)
+        .on('error', reject);
+    });
+  } catch (error) {
+    console.error(error);
+  }
 });
+
+// ...
+
 
 /*
  Sass & CSS Lint
@@ -138,7 +156,7 @@ gulp.task('styles', () => {
  Lint the Sass & CSS code --> check code quality
 */
 gulp.task('styles:lint', () => {
-  gulp.src([
+  return gulp.src([
     'app/assets/sass/**/*.scss',
     'app/assets/css/**/*.css'
   ])
@@ -206,17 +224,16 @@ gulp.task('scripts', () =>
     .pipe($.sourcemaps.write())
     .pipe(gulp.dest('.tmp/assets/js'))
     .pipe($.concat('main.min.js'))
-    .pipe($.uglify(
-      {
-        output: {
-          comments: false
-        }
+    .pipe($.uglify({
+      output: {
+        comments: false
       }
-    ))
-    .pipe($.size({title: 'scripts'}))
+    }))
+    .pipe($.size({ title: 'scripts' }))
     .pipe($.sourcemaps.write('.'))
     .pipe(gulp.dest('dist/assets/js'))
     .pipe(gulp.dest('.tmp/assets/js'))
+    .pipe(reload({ stream: true }))
 );
 
 /*
@@ -245,7 +262,8 @@ gulp.task('images', () =>
       interlaced: true
     })))
     .pipe(gulp.dest('dist/assets/images'))
-    .pipe($.size({title: 'images'}))
+    .pipe($.size({ title: 'images' }))
+    .pipe(reload({ stream: true }))
 );
 
 /*
@@ -258,6 +276,7 @@ gulp.task('fonts', () =>
     .pipe($.concat('app/fonts/**/*'))
     .pipe(gulp.dest('.tmp/fonts'))
     .pipe(gulp.dest('dist/fonts'))
+    .pipe(reload({ stream: true }))
 );
 
 /*
@@ -271,9 +290,9 @@ gulp.task('clean', () =>
     'dist/*',
     '!dist/.git'
   ],
-  {
-    dot: true
-  })
+    {
+      dot: true
+    })
 );
 
 /*
@@ -291,7 +310,8 @@ gulp.task('copy', () =>
   })
     .pipe($.plumberNotifier())
     .pipe(gulp.dest('dist'))
-    .pipe($.size({title: 'copy'}))
+    .pipe($.size({ title: 'copy' }))
+    .pipe(reload({ stream: true }))
 );
 
 /*
@@ -322,8 +342,8 @@ gulp.task('phantomjs:screenshots', () =>
  =====================================================================================
  Watch files for changes and reload
 */
-gulp.task('serve', ['scripts', 'styles'], () => {
-  browserSync({
+gulp.task('serve', gulp.series('scripts', 'styles', function (done) {
+  browserSync.init({
     notify: false,
     logPrefix: 'NMD',
     scrollElementMapping: ['main', '.mdl-layout'],
@@ -338,20 +358,22 @@ gulp.task('serve', ['scripts', 'styles'], () => {
     }
   });
 
-  gulp.watch(['app/_hb/**/*.hbs'], ['handlebars:compile', reload]);
-  gulp.watch(['app/**/*.html'], ['html', reload]);
-  gulp.watch(['app/assets/sass/**/*.scss', 'app/assets/css/**/*.css'], ['styles:lint', 'styles', reload]);
-  gulp.watch(['app/assets/es/**/*.js', 'app/assets/js/**/*.js'], ['scripts:lint', 'scripts', reload]);
-  gulp.watch(['app/assets/images/**/*'], reload);
-});
+  gulp.watch(['app/_hb/**/*.hbs'], gulp.series('handlebars:compile'));
+  gulp.watch(['app/**/*.html'], gulp.series('html'));
+  gulp.watch(['app/assets/sass/**/*.scss', 'app/assets/css/**/*.css'], gulp.series('styles:lint', 'styles'));
+  gulp.watch(['app/assets/es/**/*.js', 'app/assets/js/**/*.js'], gulp.series('scripts:lint', 'scripts'));
+  gulp.watch(['app/assets/images/**/*'], gulp.series('images'));
+
+  done();
+}));
 
 /*
  Server Distribution
  =====================================================================================
  Watch files for changes and reload
 */
-gulp.task('serve:dist', ['scripts', 'styles'], () => {
-  browserSync({
+gulp.task('serve:dist', gulp.series('scripts', 'styles', function (done) {
+  browserSync.init({
     notify: false,
     logPrefix: 'NMD',
     scrollElementMapping: ['main', '.mdl-layout'],
@@ -365,19 +387,21 @@ gulp.task('serve:dist', ['scripts', 'styles'], () => {
       }
     }
   });
-});
+
+  done();
+}));
 
 /*
  Default Task
  =====================================================================================
  Build production files
 */
-gulp.task('default', ['clean'], cb =>
+gulp.task('default', gulp.series('clean', function (cb) {
   runSequence(
     ['scripts:lint', 'styles:lint'],
     'sass:docs',
     'handlebars:compile',
     ['html', 'styles', 'scripts', 'images', 'fonts', 'copy'],
     cb
-  )
-);
+  );
+}));
