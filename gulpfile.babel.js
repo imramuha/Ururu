@@ -242,7 +242,7 @@ gulp.task('scripts', () =>
  Lint the ES6 code --> check code quality
 */
 gulp.task('scripts:lint', () =>
-  gulp.src(['app/assets/es/**/*.js', 'app/assets/js/**/*.js', '!node_modules/**'])
+  gulp.src(['app/assets/es/**/*.js', 'app/assets/es/**/*.js', '!node_modules/**'])
     .pipe($.plumberNotifier())
     .pipe($.eslint())
     .pipe($.eslint.format())
@@ -361,7 +361,7 @@ gulp.task('serve', gulp.series('scripts', 'styles', function (done) {
   gulp.watch(['app/_hb/**/*.hbs'], gulp.series('handlebars:compile'));
   gulp.watch(['app/**/*.html'], gulp.series('html'));
   gulp.watch(['app/assets/sass/**/*.scss', 'app/assets/css/**/*.css'], gulp.series('styles:lint', 'styles'));
-  gulp.watch(['app/assets/es/**/*.js', 'app/assets/js/**/*.js'], gulp.series('scripts:lint', 'scripts'));
+  gulp.watch(['app/assets/es/**/*.js', 'app/assets/es/**/*.js'], gulp.series('scripts:lint', 'scripts'));
   gulp.watch(['app/assets/images/**/*'], gulp.series('images'));
 
   done();
