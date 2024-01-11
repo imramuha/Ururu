@@ -13,8 +13,7 @@ Daarnaast kunnen zij ook het nieuws lezen, blog bezoeken, meer informatie over U
 De bezoeker heeft ook de mogelijkheid om een account te registreren en dus ook aanmelden. Een aangemelde bezoeker kan ook de 
 projecten van de studenten liken, aan favoriten toevoegen of zelfs delen via de social media kanalen. 
 
-Gitlab: https://gitlab.com/imramuha/Ururu/
-Github pages: https://imramuha.github.io/app/
+Github pages: https://imramuha.github.io/Ururu/app/
 
 Functioneel
 ------------
