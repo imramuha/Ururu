@@ -3,5 +3,5 @@ Disallow: /assets/data/
 Disallow: /assets/fonts/
 Disallow: /assets/images/icons/
 Disallow: /assets/css/
-Disallow: /assets/es/
+Disallow: /assets/js/
 Sitemap: /sitemap.xml
