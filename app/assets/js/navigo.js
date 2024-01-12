@@ -1,7 +1,7 @@
 'use strict';
 
 import LoadJson from './loadJson.js';
-let Navigo = require('navigo');
+import Navigo from 'navigo';
 
 export default class UseNavigo {
     constructor() {
