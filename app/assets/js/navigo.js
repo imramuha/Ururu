@@ -13,7 +13,7 @@ export default class UseNavigo {
 
         // for locally
         // this._router = new Navigo("/");
-        
+
         this.navigo();
 
         this.favProject();
@@ -37,7 +37,6 @@ export default class UseNavigo {
 
     navigo() {
         let loadJson = new LoadJson();
-        console.log('navigo function atleast gets called')
     
         this._router
             .on({
@@ -46,11 +45,9 @@ export default class UseNavigo {
                     loadJson.pageIndexJson();
                 },
                 'index.html': function () {
-                    console.log('Matching route: /');
+                    console.log('Matching route: /index.html');
                     loadJson.pageIndexJson();
                 },
-                
-    
                 'projects.html': function () {
                     console.log('Matching route: projects.html');
                     // loading the projects

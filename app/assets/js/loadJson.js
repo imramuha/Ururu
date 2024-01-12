@@ -7,9 +7,6 @@ import articles  from './../data/articles.js';
 
 export default class LoadJson {
     constructor() {
-      
-        console.log(projects);
-        console.log(projects[0])
 
         // chaching dom elements
         this._projectsContainer = document.querySelector('.projectsContainer');
