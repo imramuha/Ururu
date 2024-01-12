@@ -83,7 +83,7 @@ class App {
     init() {
         console.log('Initialization of the class App');
 
-        let useNavigo = new UseNavigo();
+        //let useNavigo = new UseNavigo();
         // instances of our classes
         let toggleButton = new Button();
         // make sure the nav stays none if the screen is < 768 unless the pullnav is

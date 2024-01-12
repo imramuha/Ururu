@@ -1,6 +1,6 @@
 'use strict';
 
-import  projects  from './../data/projects.json';
+const  projects = fetch('./../data/projects.json');
 import  courses  from '../data/aboutUs.json';
 import  { posts } from '../data/blogposts.json';
 import  { articles }  from './../data/articles.json';
