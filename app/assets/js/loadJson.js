@@ -1,17 +1,9 @@
 'use strict';
 
-console.log('Importing projects...');
-// projects from './assets/data/projects.json';
-
-console.log('Importing courses...');
-const projects = require('./assets/data/projects.json');
-const courses = require('./assets/data/aboutUs.json');
-const posts = require('./assets/data/blogposts.json');
-const articles = require('./assets/data/articles.json');
-console.log('Imported courses:', courses);
-
-//import  posts  from './assets/data/blogposts.json';
-//import  articles  from './assets/data/articles.json';
+import  { projects } from './assets/data/projects.json';
+import   { courses } from './assets/data/aboutUs.json';
+import  { posts } from './assets/data/blogposts.json';
+import  { articles }  from './assets/data/articles.json';
 
 export default class LoadJson {
     constructor() {
