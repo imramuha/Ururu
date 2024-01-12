@@ -23,6 +23,7 @@
     "@babel/preset-react": "^7.23.3",
     "@babel/register": "^7.23.7",
     "@babel/runtime": "^7.23.7",
+    "@types/navigo": "^8.1.2",
     "babel-loader": "^9.1.3",
     "browser-sync": "^2.18.13",
     "del": "^3.0.0",
