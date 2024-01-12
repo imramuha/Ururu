@@ -1,6 +1,6 @@
 'use strict';
 
-import  projects  from './../data/projects.json';
+import  projects  from './../data/projects.json' assert { type: "json" };;
 import  courses  from '../data/aboutUs.json';
 import  { posts } from '../data/blogposts.json';
 import  { articles }  from './../data/articles.json';
