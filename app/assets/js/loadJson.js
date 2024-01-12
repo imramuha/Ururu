@@ -1,6 +1,6 @@
 'use strict';
 
-import projects  from './assets/data/projects.json';
+import { projects } from './assets/data/projects.json';
 import { courses } from './assets/data/aboutUs.json';
 import { posts } from './assets/data/blogposts.json';
 import { articles } from './assets/data/articles.json';
