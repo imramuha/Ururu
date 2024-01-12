@@ -47,48 +47,48 @@ export default class UseNavigo {
                     console.log('Matching route: /');
                     loadJson.pageIndexJson();
                 },
-                '/Ururu/app/index.html': function () {
+                'index.html': function () {
                     console.log('Matching route: /');
                     loadJson.pageIndexJson();
                 },
                 
     
-                'Ururu/app/projects.html': function () {
+                'projects.html': function () {
                     console.log('Matching route: projects.html');
                     // loading the projects
                     loadJson.loadProjectsJson();
                     console.log('this is the projects page');
                 },
     
-                'Ururu/app/aboutus.html': function () {
+                'aboutus.html': function () {
                     console.log('Matching route: aboutus.html');
                     // loading the aboutus
                     loadJson.loadAboutUsJson();
                     console.log('this is aboutus page.');
                 },
     
-                'Ururu/app/news.html': function () {
+                'news.html': function () {
                     console.log('Matching route: news.html');
                     // loading the articles
                     loadJson.loadNewsJson();
                     console.log('this is news page.');
                 },
     
-                'Ururu/app/blog.html': function () {
+                'blog.html': function () {
                     console.log('Matching route: blog.html');
                     // loading the blog
                     loadJson.loadBlogJson();
                     console.log('this is blog page.');
                 },
     
-                'Ururu/app/detailpageproject.html': function () {
+                'detailpageproject.html': function () {
                     console.log('Matching route: detailpageproject.html');
                     // loading the detailpage for projects
                     loadJson.loadDetailProject();
                     console.log('this detailpageProjects page.');
                 },
     
-                'Ururu/app/detailpagearticle.html': function () {
+                'detailpagearticle.html': function () {
                     console.log('Matching route: detailpagearticle.html');
                     // loading the detailpage for articles
                     loadJson.loadDetailArticle();
