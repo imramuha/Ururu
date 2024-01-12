@@ -9,10 +9,7 @@ export default class UseNavigo {
         //this._root = 'http://localhost:8080/';
         //this._useHash = true; // Defaults to: false
         //this._hash = '#!'; // Defaults to: '#'
-        this._router = new Navigo("/Ururu/app/");
-
-        // for locally serving
-        //this._router = new Navigo("/");
+        this._router = new Navigo("/");
 
         console.log("inside use navigo's constructor");
     
@@ -47,48 +44,48 @@ export default class UseNavigo {
                     console.log('Matching route: /');
                     loadJson.pageIndexJson();
                 },
-                'index.html': function () {
+                'Ururu/app/index.html': function () {
                     console.log('Matching route: /');
                     loadJson.pageIndexJson();
                 },
                 
     
-                'projects.html': function () {
+                'Ururu/app/projects.html': function () {
                     console.log('Matching route: projects.html');
                     // loading the projects
                     loadJson.loadProjectsJson();
                     console.log('this is the projects page');
                 },
     
-                'aboutus.html': function () {
+                'Ururu/app/aboutus.html': function () {
                     console.log('Matching route: aboutus.html');
                     // loading the aboutus
                     loadJson.loadAboutUsJson();
                     console.log('this is aboutus page.');
                 },
     
-                'news.html': function () {
+                'Ururu/app/news.html': function () {
                     console.log('Matching route: news.html');
                     // loading the articles
                     loadJson.loadNewsJson();
                     console.log('this is news page.');
                 },
     
-                'blog.html': function () {
+                'Ururu/app/blog.html': function () {
                     console.log('Matching route: blog.html');
                     // loading the blog
                     loadJson.loadBlogJson();
                     console.log('this is blog page.');
                 },
     
-                'detailpageproject.html': function () {
+                'Ururu/app/detailpageproject.html': function () {
                     console.log('Matching route: detailpageproject.html');
                     // loading the detailpage for projects
                     loadJson.loadDetailProject();
                     console.log('this detailpageProjects page.');
                 },
     
-                'detailpagearticle.html': function () {
+                'Ururu/app/detailpagearticle.html': function () {
                     console.log('Matching route: detailpagearticle.html');
                     // loading the detailpage for articles
                     loadJson.loadDetailArticle();
