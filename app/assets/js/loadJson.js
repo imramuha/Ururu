@@ -10,9 +10,6 @@ export default class LoadJson {
       
         console.log(projects);
         console.log(projects[0])
-        console.log(courses);
-        console.log(posts);
-        console.log(articles);
 
         // chaching dom elements
         this._projectsContainer = document.querySelector('.projectsContainer');

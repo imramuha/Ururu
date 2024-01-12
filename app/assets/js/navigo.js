@@ -10,6 +10,7 @@ export default class UseNavigo {
         //this._useHash = true; // Defaults to: false
         //this._hash = '#!'; // Defaults to: '#'
         this._router = new Navigo("/Ururu/app/");
+        console.log("this._router");
         console.log(this._router);
 
         console.log("inside use navigo's constructor");
