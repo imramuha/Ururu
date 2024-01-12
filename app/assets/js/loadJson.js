@@ -1,8 +1,8 @@
 'use strict';
 
-const  projects = fetch('./../data/projects.json');
+import projects from './../data/projects.json';
 import  courses  from '../data/aboutUs.json';
-import  { posts } from '../data/blogposts.json';
+import  posts from '../data/blogposts';
 import  { articles }  from './../data/articles.json';
 
 export default class LoadJson {
