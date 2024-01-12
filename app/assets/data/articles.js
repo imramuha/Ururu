@@ -1,5 +1,4 @@
-{
-"articles": [
+const articles = [
 		{
 			"articleId": "0",
 			"articleTitle": "Sssttt, hier worden wereldproblemen opgelost...",
@@ -33,4 +32,5 @@
 			"articleImage":  [ "week-ondernemer/thumb.jpg"]
 		}
 	]
-}
+
+export default articles;

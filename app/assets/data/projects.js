@@ -1,6 +1,4 @@
-{
-"projects": 
-	[
+const projects = [[
 		{
 			"projectId": "0",
 			"nameProject": "The Sweet Tooth",
@@ -266,4 +264,5 @@
 			"imgProject": ["schoolhoeve/thumb.jpg", "schoolhoeve/01.jpg", "schoolhoeve/02.jpg", "schoolhoeve/03.jpg", "schoolhoeve/04.jpg", "schoolhoeve/05.jpg"]
 		}
 	]
-}	
+]
+export default projects;
