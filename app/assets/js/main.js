@@ -1,6 +1,6 @@
 'use strict';
 
-import { Button } from './buttons';
+import Button from './buttons';
 import Login from './login';
 import Register from './login';
 import GridOverlayElement from './grid';
