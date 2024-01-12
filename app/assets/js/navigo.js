@@ -44,7 +44,7 @@ export default class UseNavigo {
                     console.log('Matching route: /');
                     loadJson.pageIndexJson();
                 },
-                'Ururu/app/index.html': function () {
+                '/Ururu/app/index.html': function () {
                     console.log('Matching route: /');
                     loadJson.pageIndexJson();
                 },
