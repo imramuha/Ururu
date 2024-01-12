@@ -1,9 +1,9 @@
 'use strict';
 
-import { Button } from './buttons.js';
-import { Register } from './login.js';
-import { GridOverlayElement } from './grid.js';
-import { UseNavigo } from './navigo.js';
+import Button from './buttons.js';
+import Register from './login.js';
+import GridOverlayElement from './grid.js';
+import UseNavigo from './navigo.js';
 
 class App {
     constructor() {
