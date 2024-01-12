@@ -37,6 +37,7 @@ export default class UseNavigo {
 
     navigo() {
         let loadJson = new LoadJson();
+        console.log('navigo function atleast gets called')
     
         this._router
             .on({
