@@ -332,7 +332,7 @@ gulp.task('dev:puml', () =>
  Screenshots mad by headless browser
 */
 gulp.task('phantomjs:screenshots', () =>
-  gulp.src('app/assets/js/phantomjs/screenshots.js')
+  gulp.src('app/assets/es/phantomjs/screenshots.js')
     .pipe($.phantom())
     .pipe(gulp.dest('dist/docs/screenshots/'))
 );
