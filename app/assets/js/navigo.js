@@ -1,10 +1,13 @@
 'use strict';
 
+import LoadJson from './loadJson.js';
+import Navigo from 'navigo';
+
 export default class UseNavigo {
     constructor() {
 
         // using navigo
-        this._root = 'https://imramuha.github.io/Ururu/app/';
+        this._root = 'localhost:8080/';
         this._useHash = true; // Defaults to: false
         this._hash = '#!'; // Defaults to: '#'
         this._router = new Navigo(this._root, this._useHash, this._hash);
