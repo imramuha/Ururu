@@ -1,7 +1,13 @@
 'use strict';
 
-import  projects  from './assets/data/projects.json';
-import  courses  from './assets/data/aboutUs.json';
+console.log('Importing projects...');
+import projects from './assets/data/projects.json';
+console.log('Imported projects:', projects);
+
+console.log('Importing courses...');
+const courses = require('./assets/data/aboutUs.json');
+console.log('Imported courses:', courses);
+
 import  posts  from './assets/data/blogposts.json';
 import  articles  from './assets/data/articles.json';
 
