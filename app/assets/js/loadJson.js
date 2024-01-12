@@ -1,7 +1,7 @@
 'use strict';
 
 import  projects  from './../data/projects.json';
-import  courses  from '../assets/data/aboutUs.json';
+import  courses  from './assets/data/aboutUs.json';
 import  { posts } from '../data/blogposts.json';
 import  { articles }  from './../data/articles.json';
 
