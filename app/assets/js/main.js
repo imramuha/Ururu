@@ -1,10 +1,10 @@
 'use strict';
 
-import Button from './buttons';
-import Login from './login';
-import Register from './login';
-import GridOverlayElement from './grid';
-import UseNavigo from './navigo';
+import Button from './buttons.js';
+import Login from './login.js';
+import Register from './login.js';
+import GridOverlayElement from './grid.js';
+import UseNavigo from './navigo.js';
 
 class App {
     constructor() {
