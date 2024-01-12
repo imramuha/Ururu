@@ -1,9 +1,9 @@
 'use strict';
 
-import  { projects } from './assets/data/projects.json';
-import   { courses } from './assets/data/aboutUs.json';
-import  { posts } from './assets/data/blogposts.json';
-import  { articles }  from './assets/data/articles.json';
+import  projects  from './../data/aboutUs.json';
+import  courses  from './assets/data/aboutUs.json';
+import  { posts } from '../data/blogposts.json';
+import  articles   from '../data/articles.json';
 
 export default class LoadJson {
     constructor() {

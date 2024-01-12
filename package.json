@@ -6,7 +6,6 @@
   "repository": "https://gitlab.com/imramuha/Ururu", 
   "author": "imramuha@outlook.com", 
   "license": "MIT",
-  "type": "module",
   "dependencies": {
     "@babel/preset-stage-0": "^7.8.3",
     "babel-runtime": "^6.26.0",
