@@ -82,15 +82,16 @@ class App {
 
     init() {
         console.log('Initialization of the class App');
-
-        let useNavigo = new UseNavigo();
-        // instances of our classes
-        let toggleButton = new Button();
-        // make sure the nav stays none if the screen is < 768 unless the pullnav is
-        // pressed.
-        toggleButton.resizeNav();
-        let userRegister = new Register();
-        userRegister.loggedIn();
+    
+        // Wrap the initialization in a DOMContentLoaded event listener
+        document.addEventListener('DOMContentLoaded', () => {
+            let useNavigo = new UseNavigo();
+            // Instances of other classes
+            let toggleButton = new Button();
+            toggleButton.resizeNav();
+            let userRegister = new Register();
+            userRegister.loggedIn();
+        });
     }
 };
 

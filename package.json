@@ -12,7 +12,7 @@
     "gulp": "^4.0.2",
     "gulp-sass": "^5.1.0",
     "handlebars": "^4.0.11",
-    "navigo": "^6.0.1"
+    "navigo": "^8.11.1"
   },
   "devDependencies": {
     "@babel/core": "^7.23.7",
