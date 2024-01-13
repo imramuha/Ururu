@@ -106,7 +106,7 @@ export  default class Register {
     }
 
     loggedIn() {
-        console.log('logged in function');
+
         if (JSON.parse(localStorage.getItem('loginStatus')) === true) {
             if (document.title == 'Profile | Ururu | New Media Development | Artevelde University College Ghent') {
                 let loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));

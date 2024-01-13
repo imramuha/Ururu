@@ -1,9 +1,9 @@
 'use strict';
 
 import projects from './../data/projects.js';
-import courses  from './../data/aboutUs.js';
+import courses from './../data/aboutUs.js';
 import posts from './../data/blogposts.js';
-import articles  from './../data/articles.js';
+import articles from './../data/articles.js';
 
 export default class LoadJson {
     constructor() {
@@ -31,6 +31,7 @@ export default class LoadJson {
             if (projects[0][i].projectId % 2 === 0) {
                 tempStr += `
         <div class="project ${projects[0][i].projectId} Left">
+        <a href="detailpageproject.html">
         <div>
           <div class="textHover">
           </div>
@@ -43,13 +44,15 @@ export default class LoadJson {
             ${projects[0][i].nameStudent}
           </div>
           <div class="nameProject">            
-          <a href="detailpageproject.html"><h2>${projects[0][i].nameProject}</h2></a>
+         <h2>${projects[0][i].nameProject}</h2>
           </div>
         </div>
+        </a>
       </div>`;
             } else {
                 tempStr += `
         <div class="project ${projects[0][i].projectId} Right">
+        <a href="detailpageproject.html">
           <div>
             <div class="textHover">
             </div>
@@ -62,9 +65,10 @@ export default class LoadJson {
               ${projects[0][i].nameStudent}
             </div>
             <div class="nameProject">            
-            <a href="detailpageproject.html"><h2>${projects[0][i].nameProject}</h2></a>
+            <h2>${projects[0][i].nameProject}</h2>
             </div>
           </div>
+          </a>
         </div>`;
             }
             // console.log(value);
@@ -91,21 +95,25 @@ export default class LoadJson {
             if (articles[i].articleId % 2 === 0) {
                 tempStr += `
           <div class="articleDetailContainer">
-            <img  class="imgArticle Left" src="assets/images/articles/${articles[i].articleImage}">
-            <div class="textArticle Right">
-              <p><a href="detailpagearticle.html">${articles[i].articleTitle}</a></p>
-              <p class="articleThumb">${articles[i].articleThumbText}</p>
-              <p>${articles[i].articleDate}</p>
-            </div>
+              <img  class="imgArticle Left" src="assets/images/articles/${articles[i].articleImage}">
+              <div class="textArticle Right">
+                <a href="detailpagearticle.html">
+                  <p>${articles[i].articleTitle}</p>
+                  <p class="articleThumb">${articles[i].articleThumbText}</p>
+                  <p>${articles[i].articleDate}</p>
+                </a>
+              </div>
           </div>`;
                 // console.log(articles[i].articleId);
             } else {
                 tempStr += `
         <div class="articleDetailContainer">
           <div class="textArticle Left">
-            <p><a href="detailpagearticle.html">${articles[i].articleTitle}</a></p>
-            <p class="articleThumb">${articles[i].articleThumbText}</p>
-            <p>${articles[i].articleDate}</p>
+            <a href="detailpagearticle.html">
+              <p>${articles[i].articleTitle}</p>
+              <p class="articleThumb">${articles[i].articleThumbText}</p>
+              <p>${articles[i].articleDate}</p>
+            </a>
           </div>
           <img  class="imgArticle Right" src="assets/images/articles/${articles[i].articleImage}">
         </div>`;
@@ -145,6 +153,7 @@ export default class LoadJson {
             if (projects[0][i].projectId % 2 === 0) {
                 tempStrProjects += `
         <div class="project ${projects[0][i].projectId} Left">
+        <a href="detailpageproject.html">
           <div>
             <div class="textHover">
             </div>
@@ -157,13 +166,15 @@ export default class LoadJson {
               ${projects[0][i].nameStudent}
             </div>
             <div class="nameProject">            
-              <a href="detailpageproject.html"><h2>${projects[0][i].nameProject}</h2></a>
+             <h2>${projects[0][i].nameProject}</h2>
             </div>
           </div>
+          </a>
         </div>`;
             } else {
                 tempStrProjects += `
         <div class="project ${projects[0][i].projectId} Right">
+        <a href="detailpageproject.html">
           <div>
             <div class="textHover">
             </div>
@@ -176,9 +187,10 @@ export default class LoadJson {
               ${projects[0][i].nameStudent}
             </div>
             <div class="nameProject">            
-              <a href="detailpageproject.html"><h2>${projects[0][i].nameProject}</h2></a>
+           <h2>${projects[0][i].nameProject}</h2>
             </div>
           </div>
+          </a>
         </div>`;
             }
         }
@@ -235,19 +247,19 @@ export default class LoadJson {
 
         for (let i = 0; i < 1; i++) {
             tempStrTitle += `
-      <h1> ${projects[i].nameProject}</h1>
+      <h1> ${projects[0][i].nameProject}</h1>
       `;
 
             tempStr += `
       <div class="detailStudentContainer">
         <div class="detailStudentDetail">
-        <h4>${projects[i].nameStudent}         <i class="fa fa-star left foot" aria-hidden="true"></i>  </h4>
-          <h4>${projects[i].course}</h4>
-          <h4>${projects[i].specialization}</h4>
-          <h4>${projects[i].year}</h4>
+        <h4>${projects[0][i].nameStudent}         <i class="fa fa-star left foot" aria-hidden="true"></i>  </h4>
+          <h4>${projects[0][i].course}</h4>
+          <h4>${projects[0][i].specialization}</h4>
+          <h4>${projects[0][i].year}</h4>
         </div> 
         <div class="nameProjectDetail">           
-          <h4>${projects[i].nameProject}</h4>
+          <h4>${projects[0][i].nameProject}</h4>
           <a class="favorite" ><i class="fa fa-heart left foot" aria-hidden="true"></i></a>
           <a class="like"><i class="fa fa-thumbs-up left foot" aria-hidden="true"></i></a>  
           <i class="fa fa-eye left foot" aria-hidden="true"></i>  
@@ -263,12 +275,12 @@ export default class LoadJson {
         </div>
       </div>
       <div class="projectAssignmentDetail">
-        <p>${projects[i].assignment}</p>
+        <p>${projects[0][i].assignment}</p>
       </div>
       <div class="projectImages>`;
 
-            for (let j = 0; j < projects[i].imgProject.length; j++) {
-                tempStr += `<img class="imgProject" src="assets/images/projects/${projects[i].imgProject[j]}">`;
+            for (let j = 0; j < projects[0][i].imgProject.length; j++) {
+                tempStr += `<img class="imgProject" src="assets/images/projects/${projects[0][i].imgProject[j]}">`;
             }
             tempStr += `
       </div><br>`;
