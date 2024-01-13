@@ -203,9 +203,11 @@ export default class LoadJson {
         <div class="articleDetailContainer">
           <img  class="imgArticle Left" src="assets/images/articles/${articles[i].articleImage}">
           <div class="textArticle Right">
-            <p><a href="detailpagearticle.html">${articles[i].articleTitle}</a></p>
-            <p class="articleThumb">${articles[i].articleThumbText}</p>
-            <p>${articles[i].articleDate}</p>
+            <a href="detailpagearticle.html">
+              <p>${articles[i].articleTitle}</p>
+              <p class="articleThumb">${articles[i].articleThumbText}</p>
+              <p>${articles[i].articleDate}</p>
+            </a>
           </div>
         </div>`;
                 // console.log(articles[i].articleId);
@@ -213,9 +215,11 @@ export default class LoadJson {
                 tempStrArticles += `  
         <div class="articleDetailContainer">
           <div class="textArticle Left">
-            <p><a href="detailpagearticle.html">${articles[i].articleTitle}</a></p>
-            <p class="articleThumb">${articles[i].articleThumbText}</p>
-            <p>${articles[i].articleDate}</p>
+            <a href="detailpagearticle.html">
+              <p>${articles[i].articleTitle}</p>
+              <p class="articleThumb">${articles[i].articleThumbText}</p>
+              <p>${articles[i].articleDate}</p>
+            </a>
           </div>
           <img  class="imgArticle Right" src="assets/images/articles/${articles[i].articleImage}">
         </div>`;
